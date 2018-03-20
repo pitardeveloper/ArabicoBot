@@ -1,80 +1,6 @@
 const Discord = require('discord.js');
 const client = new Discord.Client();
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-// جميع حقوق هذا الملف محفوظة ,
-client.login('process.env.BOT_TOKEN'); // هنا تضع توكان البوت الخاص بك
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 client.on('ready',  () => {
   console.log('~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~'); 
   console.log('CREATED BY : PITAR HIX');
@@ -990,3 +916,7 @@ client.on('message', message => {
   message.channel.sendEmbed(embed);
     }
 });
+
+
+// THIS  MUST  BE  THIS  WAY
+client.login(process.env.BOT_TOKEN);
