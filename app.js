@@ -926,7 +926,7 @@ client.on('message', message => {
         var channels = message.guild.channels.map(channels => `${channels.name}, `).join(' ')
         const embed = new Discord.RichEmbed()
         .setColor('RANDOM')
-        .addField(`${message.guild.name}`,`**Rooms:white_check_mark:**`)
+        .addField(`${message.guild.name}`,`**الرومات الموجودة بالسيرفر:white_check_mark:**`)
         .addField(':arrow_down: عدد الرومات. :heavy_check_mark:',`** ${message.guild.channels.size}**`)
         
 .addField(':arrow_down:اسامي الرومات. :heavy_check_mark::',`**[${channels}]**`)
