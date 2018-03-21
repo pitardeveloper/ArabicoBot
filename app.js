@@ -973,7 +973,7 @@ const adkar = [
 ]
 client.on('message', message => {
 if (message.author.bot) return;
-if (message.content.startsWith('*اذكار')) {
+if (message.content.startsWith('!اذكار')) {
   if(!message.channel.guild) return;
 var client= new Discord.RichEmbed()
 .setTitle("اذكار")
@@ -986,7 +986,7 @@ message.react("??")
 }
 });
 
-
+var prefix = "!"
 const yt_api_key = "AIzaSyDHurkO6myaFEaDdDnBkgGeyHmX757JnX0";
 const discord_token = "Mzc3NTU2Mjk5MDg2NTYxMjkw.DQBvFw.ShNCq5jR7jNCIkHsEuEGTYzZ__A";
 client.login(discord_token);
