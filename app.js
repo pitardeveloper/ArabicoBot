@@ -90,30 +90,33 @@ client.on('message', message => {
      if (message.content === "!help") {
 message.author.send("" + `  **
 !ping                | سرعة الأتصال
-!id                 | معلومــات عــن حســابــك
-!say               | يكرر الكلام الذي تقولة
-!avatar           | صورتك في الدسكورد
-!embed           | يكرر الكلام بطريقة أخرى 
-!level          | لتعرف اللفل حقك
-!credit        | لتعرف فلوسك
+!id                  | معلومــات عــن حســابــك
+!say                 | يكرر الكلام الذي تقولة
+!avatar              | صورتك في الدسكورد
+!embed               | يكرر الكلام بطريقة أخرى 
+!level               | معطل / لتعرف اللفل حقك
+!credit              | معطل / لتعرف فلوسك
 تنبيه هام : كود الكرديت قيد التطوير ما تقدر تعطي احد كرديت هو قيد التطوير
 
 "اوامر السيرفرات" 
 
-!server                | معلومات عن السيرفر
-!clear                    | لحذف الرسائل
-!bc                  | لارسال رسالة برود كاست عادي
-!bc2                 | لارسال رسالة برود كاست مطور
-!create colors                  | لصناعة 200 لون
-!delete colors                  | لحذف 200 لون
-!kick                     | لطرد الشخص
-!ban                  | لتبنيد الشخص
-!mute                  | لاعطاء العضو ميوت
-!unmute                   | لفك الميوت عن العضو
-!mutechannel             | لتقفيل الشات
+!server                 | معلومات عن السيرفر
+!clear                  | لحذف الرسائل
+!bc                     |  معطل / لارسال رسالة برود كاست عادي
+!bc2                    | معطل / لارسال رسالة برود كاست مطور
+!create colors          | لصناعة 200 لون
+!delete colors          | لحذف 200 لون
+!kick                   | لطرد الشخص
+!ban                    | لتبنيد الشخص
+!mute                   | لاعطاء العضو ميوت
+!unmute                 | لفك الميوت عن العضو
+!mutechannel            | لتقفيل الشات
 !unmutechannel          | لفتح الشات
-ct                | لصناعة روم كتابي
-!cv          | لصناعة روم صوتي
+ct                      | لصناعة روم كتابي
+!cv                     | لصناعة روم صوتي
+!rooms                  | يطلع لك اسامي وارقام الرومات
+!create server          | صيانة / يسويلك سيرفر كاامل
+
 
 "اوامر البوت" 
 
@@ -135,7 +138,7 @@ ct                | لصناعة روم كتابي
 
 "ديانات"
 
-!اذكار                    | لقراءة اذكار
+!اذكار                    | لقراءة اذكار /
 
 "استضافات"
 
@@ -933,6 +936,472 @@ client.on('message', message => {
         message.channel.sendEmbed(embed);
     }
 });
+
+
+const adkar = [
+  '**اذكار  | **اللَّهُمَّ اكْفِنِي بِحَلَالِكَ عَنْ حَرَامِكَ وَأَغْنِنِي بِفَضْلِكَ عَمَّنْ سِوَاكَ.',
+  '**اذكار  |  **اللَّهُمَّ إِنِّي أَسْأَلُكَ الْهُدَى وَالتُّقَى وَالْعَفَافَ وَالْغِنَى. ',
+  '**اذكار  ‏|  **اللَّهُمَّ اغْفِرْ لِي ذَنْبِي كُلَّهُ، دِقَّهُ، وَجِلَّهُ، وَأَوَّلَهُ، وَآخِرَهُ، وَعَلَانِيَتَهُ، وَسِرَّهُ. ',
+  '**‏اذكار  |  **أستغفر الله .',     
+  '**‏اذكار  | **الْلَّهُ أَكْبَرُ',
+  '**‏اذكار  |  **لَا إِلَهَ إِلَّا اللَّهُ',
+  '**اذكار  |  **اللَّهُمَّ صَلِّ عَلَى مُحَمَّدٍ وَعَلَى آلِ مُحَمَّدٍ كَمَا صَلَّيْتَ عَلَى إِبْرَاهِيمَ , وَعَلَى آلِ إِبْرَاهِيمَ إِنَّكَ حَمِيدٌ مَجِيدٌ , اللَّهُمَّ بَارِكْ عَلَى مُحَمَّدٍ وَعَلَى آلِ مُحَمَّدٍ كَمَا بَارَكْتَ عَلَى إِبْرَاهِيمَ وَعَلَى آلِ إِبْرَاهِيمَ إِنَّكَ حَمِيدٌ مَجِيدٌ.',
+  '**اذكار  |  **سُبْحَانَ الْلَّهِ، وَالْحَمْدُ لِلَّهِ، وَلَا إِلَهَ إِلَّا الْلَّهُ، وَالْلَّهُ أَكْبَرُ',
+  '**اذكار  | **لَا إلَه إلّا اللهُ وَحْدَهُ لَا شَرِيكَ لَهُ، لَهُ الْمُلْكُ وَلَهُ الْحَمْدُ وَهُوَ عَلَى كُلُّ شَيْءِ قَدِيرِ.',
+  '**اذكار  | **أسْتَغْفِرُ اللهَ وَأتُوبُ إلَيْهِ',
+  '**‏اذكار  | **سُبْحـانَ اللهِ وَبِحَمْـدِهِ. ',
+  '‏**اذكار**|  لَا إلَه إلّا اللهُ وَحْدَهُ لَا شَرِيكَ لَهُ، لَهُ الْمُلْكُ وَلَهُ الْحَمْدُ وَهُوَ عَلَى كُلِّ شَيْءِ قَدِيرِ.',
+  '**اذكار  ‏|   **اللَّهُمَّ إِنِّي أَسْأَلُكَ عِلْمًا نَافِعًا، وَرِزْقًا طَيِّبًا، وَعَمَلًا مُتَقَبَّلًا.',
+  '**اذكار  | ‏ **يَا رَبِّ , لَكَ الْحَمْدُ كَمَا يَنْبَغِي لِجَلَالِ وَجْهِكَ , وَلِعَظِيمِ سُلْطَانِكَ.',
+  'اذكار    |  **أسْتَغْفِرُ اللهَ العَظِيمَ الَّذِي لاَ إلَهَ إلاَّ هُوَ، الحَيُّ القَيُّومُ، وَأتُوبُ إلَيهِ.**',
+  '**‏اذكار  |  **اللَّهُمَّ إِنَّا نَعُوذُ بِكَ مِنْ أَنْ نُشْرِكَ بِكَ شَيْئًا نَعْلَمُهُ ، وَنَسْتَغْفِرُكَ لِمَا لَا نَعْلَمُهُ.',
+  '**‏اذكار  |  **اللَّهُمَّ صَلِّ وَسَلِّمْ وَبَارِكْ على نَبِيِّنَا مُحمَّد. ',
+  '**‏اذكار  |  **أَعـوذُ بِكَلِمـاتِ اللّهِ التّـامّـاتِ مِنْ شَـرِّ ما خَلَـق.',
+  '**اذكار  |  **يَا حَيُّ يَا قيُّومُ بِرَحْمَتِكَ أسْتَغِيثُ أصْلِحْ لِي شَأنِي كُلَّهُ وَلاَ تَكِلْنِي إلَى نَفْسِي طَـرْفَةَ عَيْنٍ. ',
+  '**اذكار  |  **اللّهُـمَّ إِنّـي أَعـوذُ بِكَ مِنَ الْكُـفر ، وَالفَـقْر ، وَأَعـوذُ بِكَ مِنْ عَذابِ القَـبْر ، لا إلهَ إلاّ أَنْـتَ.',
+  '**‏اذكار  |  **اللّهُـمَّ عافِـني في بَدَنـي ، اللّهُـمَّ عافِـني في سَمْـعي ، اللّهُـمَّ عافِـني في بَصَـري ، لا إلهَ إلاّ أَنْـتَ.',
+  '**‏اذكار  |  **سُبْحـانَ اللهِ وَبِحَمْـدِهِ عَدَدَ خَلْـقِه ، وَرِضـا نَفْسِـه ، وَزِنَـةَ عَـرْشِـه ، وَمِـدادَ كَلِمـاتِـه. ',
+  '**‏اذكار  |  **اللّهُـمَّ بِكَ أَصْـبَحْنا وَبِكَ أَمْسَـينا ، وَبِكَ نَحْـيا وَبِكَ نَمُـوتُ وَإِلَـيْكَ النُّـشُور.',
+  '**‏اذكار  |  **بِسـمِ اللهِ الذي لا يَضُـرُّ مَعَ اسمِـهِ شَيءٌ في الأرْضِ وَلا في السّمـاءِ وَهـوَ السّمـيعُ العَلـيم. ',
+  '**‏اذكار  |  **حَسْبِـيَ اللّهُ لا إلهَ إلاّ هُوَ عَلَـيهِ تَوَكَّـلتُ وَهُوَ رَبُّ العَرْشِ العَظـيم.',
+  '**اذكار  |  **اللّهُـمَّ ما أَصْبَـَحَ بي مِـنْ نِعْـمَةٍ أَو بِأَحَـدٍ مِـنْ خَلْـقِك ، فَمِـنْكَ وَحْـدَكَ لا شريكَ لَـك ، فَلَـكَ الْحَمْـدُ وَلَـكَ الشُّكْـر.',
+  '**‏اذكار  |  **اللّهُـمَّ إِنِّـي أَصْبَـحْتُ أُشْـهِدُك ، وَأُشْـهِدُ حَمَلَـةَ عَـرْشِـك ، وَمَلَائِكَتَكَ ، وَجَمـيعَ خَلْـقِك ، أَنَّـكَ أَنْـتَ اللهُ لا إلهَ إلاّ أَنْـتَ وَحْـدَكَ لا شَريكَ لَـك ، وَأَنَّ ُ مُحَمّـداً عَبْـدُكَ وَرَسـولُـك',
+  '**‏اذكار  |  **رَضيـتُ بِاللهِ رَبَّـاً وَبِالإسْلامِ ديـناً وَبِمُحَـمَّدٍ صلى الله عليه وسلم نَبِيّـاً',
+  '**‏اذكار  |  **اللهم إني أعوذ بك من العجز، والكسل، والجبن، والبخل، والهرم، وعذاب القبر، اللهم آت نفسي تقواها، وزكها أنت خير من زكاها. أنت وليها ومولاها. اللهم إني أعوذ بك من علم لا ينفع، ومن قلب لا يخشع، ومن نفس لا تشبع، ومن دعوة لا يستجاب لها',
+  '**‏اذكار  |  **اللهم إني أعوذ بك من شر ما عملت، ومن شر ما لم أعمل',
+  '**‏اذكار  |  **اللهم مصرف القلوب صرف قلوبنا على طاعتك',
+]
+client.on('message', message => {
+if (message.author.bot) return;
+if (message.content.startsWith('*اذكار')) {
+  if(!message.channel.guild) return;
+var client= new Discord.RichEmbed()
+.setTitle("اذكار")
+.setThumbnail(message.author.avatarURL)
+.setColor('RANDOM')
+.setDescription(`${adkar[Math.floor(Math.random() * adkar.length)]}`)
+               .setTimestamp()
+message.channel.sendEmbed(client);
+message.react("??")
+}
+});
+
+
+const yt_api_key = "AIzaSyDHurkO6myaFEaDdDnBkgGeyHmX757JnX0";
+const discord_token = "Mzc3NTU2Mjk5MDg2NTYxMjkw.DQBvFw.ShNCq5jR7jNCIkHsEuEGTYzZ__A";
+client.login(discord_token);
+
+
+var servers = ['379222211820650506','','','','','','','','','','','','','',''];
+var queue = [];
+var guilds = ['',''];
+var queueNames = [];
+var isPlaying = false;
+var dispatcher = null;
+var voiceChannel = null;
+var skipReq = 0;
+var skippers = [];
+var now_playing = [];
+
+
+client.on('ready', () => {});
+var download = function(uri, filename, callback) {
+	request.head(uri, function(err, res, body) {
+		console.log('content-type:', res.headers['content-type']);
+		console.log('content-length:', res.headers['content-length']);
+
+		request(uri).pipe(fs.createWriteStream(filename)).on('close', callback);
+	});
+};
+
+client.on('message', function(message) {
+	const member = message.member;
+	const mess = message.content.toLowerCase();
+	const args = message.content.split(' ').slice(1).join(' ');
+
+	if (mess.startsWith(prefix + 'play')) {
+		if (!message.member.voiceChannel) return message.channel.send(':no_entry: || **__يجب ان تكون في روم صوتي__**');
+		// if user is not insert the URL or song title
+		if (args.length == 0) {
+			let play_info = new Discord.RichEmbed()
+				.setAuthor(client.user.username, client.user.avatarURL)
+				.setFooter('طلب بواسطة: ' + message.author.tag)
+				.setDescription('**قم بإدراج رابط او اسم الأغنيه**')
+			message.channel.sendEmbed(play_info)
+			return;
+		}
+		if (queue.length > 0 || isPlaying) {
+			getID(args, function(id) {
+				add_to_queue(id);
+				fetchVideoInfo(id, function(err, videoInfo) {
+					if (err) throw new Error(err);
+					let play_info = new Discord.RichEmbed()
+						.setAuthor(client.user.username, client.user.avatarURL)
+						.addField('تمت إضافة الاغنيه بقائمة الإنتظار', `**
+						  ${videoInfo.title}
+						  **`)
+						.setColor("RANDOM")
+						.setFooter('|| ' + message.author.tag)
+						.setThumbnail(videoInfo.thumbnailUrl)
+					message.channel.sendEmbed(play_info);
+					queueNames.push(videoInfo.title);
+					now_playing.push(videoInfo.title);
+
+				});
+			});
+		}
+		else {
+
+			isPlaying = true;
+			getID(args, function(id) {
+				queue.push('placeholder');
+				playMusic(id, message);
+				fetchVideoInfo(id, function(err, videoInfo) {
+					if (err) throw new Error(err);
+					let play_info = new Discord.RichEmbed()
+						.setAuthor(client.user.username, client.user.avatarURL)
+						.addField('||**تم تشغيل **', `**${videoInfo.title}
+							  **`)
+						.setColor("RANDOM")
+                        .addField(`من قبل: ${message.author.username}`, `**Dark Team**`)
+						.setThumbnail(videoInfo.thumbnailUrl)
+							
+					// .setDescription('?')
+					message.channel.sendEmbed(play_info)
+					// client.user.setGame(videoInfo.title,'https://www.twitch.tv/Abdulmohsen');
+				});
+			});
+		}
+	}
+	else if (mess.startsWith(prefix + 'skip')) {
+		if (!message.member.voiceChannel) return message.channel.send(':no_entry: || ** يجب ان تكون في روم صوتي**');
+		message.channel.send(':ok:').then(() => {
+			skip_song(message);
+			var server = server = servers[message.guild.id];
+			if (message.guild.voiceConnection) message.guild.voiceConnection.disconnect();
+		});
+	}
+	else if (message.content.startsWith(prefix + 'volume')) {
+		if (!message.member.voiceChannel) return message.channel.send(':no_entry: || **يجب ان تكون في روم صوتي**');
+		// console.log(args)
+		if (args > 100) return message.channel.send('1 - 100 || **__لا أكثر ولا أقل__**')
+		if (args < 1) return message.channel.send('1 - 100 || **__لا أكثر ولا أقل__**')
+		dispatcher.setVolume(1 * args / 50);
+		message.channel.sendMessage(`** ${dispatcher.volume*50}% مستوى الصوت **`);
+	}
+	else if (mess.startsWith(prefix + 'stop')) {
+		if (!message.member.voiceChannel) return message.channel.send(':no_entry: || **يجب ان تكون في روم صوتي**');
+		message.channel.send(':ok:').then(() => {
+			dispatcher.pause();
+		});
+	}
+	else if (mess.startsWith(prefix + 'queue')) {
+		if (!message.member.voiceChannel) return message.channel.send(':no_entry: || **يجب ان تكون في روم صوتي**');
+			message.channel.send(':ok:').then(() => {
+			dispatcher.resume();
+		});
+	}
+	else if (mess.startsWith(prefix + 'leave')) {
+		if (!message.member.voiceChannel) return message.channel.send(':no_entry: || **يجب ان تكون في روم صوتي**');
+		message.channel.send(':ok:');
+		var server = server = servers[message.guild.id];
+		if (message.guild.voiceConnection) message.guild.voiceConnection.disconnect();
+	}
+	else if (mess.startsWith(prefix + 'join')) {
+		if (!message.member.voiceChannel) return message.channel.send(':no_entry: || **يجب ان تكون في روم صوتي**');
+		message.member.voiceChannel.join().then(message.channel.send(':ok:'));
+	}
+	else if (mess.startsWith(prefix + 'play')) {
+		if (!message.member.voiceChannel) return message.channel.send(':no_entry: || **يجب ان تكون في روم صوتي**');
+		if (isPlaying == false) return message.channel.send(':anger: || **تم التوقيف**');
+		let playing_now_info = new Discord.RichEmbed()
+			.setAuthor(client.user.username, client.user.avatarURL)
+			.addField('تمت إضافة الـأغنيه بقائمة الإنتظار', `**
+				  ${videoInfo.title}
+				  **`)
+			.setColor("RANDOM")
+			.setFooter('طلب بواسطة: ' + message.author.tag)
+			.setThumbnail(videoInfo.thumbnailUrl)
+		//.setDescription('?')
+		message.channel.sendEmbed(playing_now_info);
+	}
+});
+
+function skip_song(message) {
+	if (!message.member.voiceChannel) return message.channel.send(':no_entry: || **يجب ان تكون في روم صوتي**');
+	dispatcher.end();
+}
+
+function playMusic(id, message) {
+	voiceChannel = message.member.voiceChannel;
+
+
+	voiceChannel.join().then(function(connectoin) {
+		let stream = ytdl('https://www.youtube.com/watch?v=' + id, {
+			filter: 'audioonly'
+		});
+		skipReq = 0;
+		skippers = [];
+
+		dispatcher = connectoin.playStream(stream);
+		dispatcher.on('end', function() {
+			skipReq = 0;
+			skippers = [];
+			queue.shift();
+			queueNames.shift();
+			if (queue.length === 0) {
+				queue = [];
+				queueNames = [];
+				isPlaying = false;
+			}
+			else {
+				setTimeout(function() {
+					playMusic(queue[0], message);
+				}, 500);
+			}
+		});
+	});
+}
+
+function getID(str, cb) {
+	if (isYoutube(str)) {
+		cb(getYoutubeID(str));
+	}
+	else {
+		search_video(str, function(id) {
+			cb(id);
+		});
+	}
+}
+
+function add_to_queue(strID) {
+	if (isYoutube(strID)) {
+		queue.push(getYoutubeID(strID));
+	}
+	else {
+		queue.push(strID);
+	}
+}
+
+function search_video(query, cb) {
+    request("https://www.googleapis.com/youtube/v3/search?part=id&type=video&q=" + encodeURIComponent(query) + "&key=" + yt_api_key, function(error, response, body) {
+        try {
+        var json = JSON.parse(body);
+        cb(json.items[0].id.videoId);
+        } catch (e) {
+    cb('EgqUJOudrcM');
+    return;
+
+    console.error(e);
+            
+        }
+    });
+}
+
+
+function isYoutube(str) {
+	return str.toLowerCase().indexOf('youtube.com') > -1;
+}
+
+client.on('ready', () => {});
+var download = function(uri, filename, callback) {
+	request.head(uri, function(err, res, body) {
+		console.log('content-type:', res.headers['content-type']);
+		console.log('content-length:', res.headers['content-length']);
+
+		request(uri).pipe(fs.createWriteStream(filename)).on('close', callback);
+	});
+};
+
+client.on('message', function(message) {
+	const member = message.member;
+	const mess = message.content.toLowerCase();
+	const args = message.content.split(' ').slice(1).join(' ');
+
+	if (mess.startsWith(prefix + 'pl')) {
+		if (!message.member.voiceChannel) return message.channel.send(':no_entry: || **Must BE at a voice channel**');
+		// if user is not insert the URL or song title
+		if (args.length == 0) {
+			let play_info = new Discord.RichEmbed()
+				.setAuthor(client.user.username, client.user.avatarURL)
+				.setFooter('request by : ' + message.author.tag)
+				.setDescription('**Please enter a song name or Link**')
+			message.channel.sendEmbed(play_info)
+			return;
+		}
+		if (queue.length > 0 || isPlaying) {
+			getID(args, function(id) {
+				add_to_queue(id);
+				fetchVideoInfo(id, function(err, videoInfo) {
+					if (err) throw new Error(err);
+					let play_info = new Discord.RichEmbed()
+						.setAuthor(client.user.username, client.user.avatarURL)
+						.addField('The song has been added to the waiting list', `**
+						  ${videoInfo.title}
+						  **`)
+						.setColor("RANDOM")
+						.setFooter('|| ' + message.author.tag)
+						.setThumbnail(videoInfo.thumbnailUrl)
+					message.channel.sendEmbed(play_info);
+					queueNames.push(videoInfo.title);
+					now_playing.push(videoInfo.title);
+
+				});
+			});
+		}
+		else {
+
+			isPlaying = true;
+			getID(args, function(id) {
+				queue.push('placeholder');
+				playMusic(id, message);
+				fetchVideoInfo(id, function(err, videoInfo) {
+					if (err) throw new Error(err);
+					let play_info = new Discord.RichEmbed()
+						.setAuthor(client.user.username, client.user.avatarURL)
+						.addField('||** Playing **', `**${videoInfo.title}
+							  **`)
+						.setColor("RANDOM")
+                        .addField(`By : ${message.author.username}`, `**Dark Team**`)
+						.setThumbnail(videoInfo.thumbnailUrl)
+							
+					// .setDescription('?')
+					message.channel.sendEmbed(play_info)
+					// client.user.setGame(videoInfo.title,'https://www.twitch.tv/Abdulmohsen');
+				});
+			});
+		}
+	}
+	else if (mess.startsWith(prefix + 'skip')) {
+		if (!message.member.voiceChannel) return message.channel.send(':no_entry: || **Must BE at a voice channel**');
+		message.channel.send(':ok:').then(() => {
+			skip_song(message);
+			var server = server = servers[message.guild.id];
+			if (message.guild.voiceConnection) message.guild.voiceConnection.disconnect();
+		});
+	}
+	else if (message.content.startsWith(prefix + 'vol')) {
+		if (!message.member.voiceChannel) return message.channel.send(':no_entry: || **Must BE at a voice channel**');
+		// console.log(args)
+		if (args > 100) return message.channel.send('1 - 100')
+		if (args < 1) return message.channel.send('1 - 100')
+		dispatcher.setVolume(1 * args / 50);
+		message.channel.sendMessage(`** ${dispatcher.volume*50}%  volume **`);
+	}
+	else if (mess.startsWith(prefix + 'stop')) {
+		if (!message.member.voiceChannel) return message.channel.send(':no_entry: || **Must BE at a voice channel**');
+		message.channel.send(':ok:').then(() => {
+			dispatcher.pause();
+		});
+	}
+	else if (mess.startsWith(prefix + 'ruseme')) {
+		if (!message.member.voiceChannel) return message.channel.send(':no_entry: || ** Must BE at a voice channel**');
+			message.channel.send(':ok:').then(() => {
+			dispatcher.resume();
+		});
+	}
+	else if (mess.startsWith(prefix + 'go')) {
+		if (!message.member.voiceChannel) return message.channel.send(':no_entry: || **Must BE at a voice channel**');
+		message.channel.send(':ok:');
+		var server = server = servers[message.guild.id];
+		if (message.guild.voiceConnection) message.guild.voiceConnection.disconnect();
+	}
+	else if (mess.startsWith(prefix + 'join')) {
+		if (!message.member.voiceChannel) return message.channel.send(':no_entry: || ** Must BE at a voice channel  **');
+		message.member.voiceChannel.join().then(message.channel.send(':ok:'));
+	}
+	else if (mess.startsWith(prefix + 'play')) {
+		if (!message.member.voiceChannel) return message.channel.send(':no_entry: || **Must BE at a voice channel**');
+		if (isPlaying == false) return message.channel.send(':anger: || **Stoped**');
+		let playing_now_info = new Discord.RichEmbed()
+			.setAuthor(client.user.username, client.user.avatarURL)
+			.addField('Playing:', `**
+				  ${videoInfo.title}
+				  **`)
+			.setColor("RANDOM")
+			.setFooter('request By : ' + message.author.tag)
+			.setThumbnail(videoInfo.thumbnailUrl)
+		//.setDescription('?')
+		message.channel.sendEmbed(playing_now_info);
+	}
+});
+
+function skip_song(message) {
+	if (!message.member.voiceChannel) return message.channel.send(':no_entry: || **Must BE at a voice channel**');
+	dispatcher.end();
+}
+
+function playMusic(id, message) {
+	voiceChannel = message.member.voiceChannel;
+
+
+	voiceChannel.join().then(function(connectoin) {
+		let stream = ytdl('https://www.youtube.com/watch?v=' + id, {
+			filter: 'audioonly'
+		});
+		skipReq = 0;
+		skippers = [];
+
+		dispatcher = connectoin.playStream(stream);
+		dispatcher.on('end', function() {
+			skipReq = 0;
+			skippers = [];
+			queue.shift();
+			queueNames.shift();
+			if (queue.length === 0) {
+				queue = [];
+				queueNames = [];
+				isPlaying = false;
+			}
+			else {
+				setTimeout(function() {
+					playMusic(queue[0], message);
+				}, 500);
+			}
+		});
+	});
+}
+
+function getID(str, cb) {
+	if (isYoutube(str)) {
+		cb(getYoutubeID(str));
+	}
+	else {
+		search_video(str, function(id) {
+			cb(id);
+		});
+	}
+}
+
+function add_to_queue(strID) {
+	if (isYoutube(strID)) {
+		queue.push(getYoutubeID(strID));
+	}
+	else {
+		queue.push(strID);
+	}
+}
+
+function search_video(query, cb) {
+    request("https://www.googleapis.com/youtube/v3/search?part=id&type=video&q=" + encodeURIComponent(query) + "&key=" + yt_api_key, function(error, response, body) {
+        try {
+        var json = JSON.parse(body);
+        cb(json.items[0].id.videoId);
+        } catch (e) {
+    cb('EgqUJOudrcM');
+    return;
+
+    console.error(e);
+            
+        }
+    });
+}
+
+
+
+function isYoutube(str) {
+	return str.toLowerCase().indexOf('youtube.com') > -1;
+}
 
 
 // THIS  MUST  BE  THIS  WAY
