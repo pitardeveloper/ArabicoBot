@@ -987,7 +987,7 @@ message.react("??")
 });
 
 
-bot.on("message", message => {
+client.on("message", message => {
     let args = message.content.split(" ").slice(1);
   if (message.content.startsWith('!report')) {
         let user = message.mentions.users.first();
