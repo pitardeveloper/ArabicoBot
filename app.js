@@ -987,5 +987,28 @@ message.react("??")
 });
 
 
+bot.on("message", message => {
+    let args = message.content.split(" ").slice(1);
+  if (message.content.startsWith('!report')) {
+        let user = message.mentions.users.first();
+        let reason = args.slice(1).join(' ');
+        let modlog = bot.channels.find('name', 'console');
+        if (!reason) return message.reply('اكتب سبب الابلاغ  ');
+          if (message.mentions.users.size < 1) return message.reply('You must mention someone to report them.').catch(console.error);
+  
+    if (!modlog) return message.reply('روم اللوق مو موجود');
+    const embed = new Discord.RichEmbed()
+      .setColor(0x00AE86)
+      .setTimestamp()
+      .addField('الحالة:', 'Reported')
+      .addField('المبلغ:', `${user.username}#${user.discriminator} (${user.id})`)
+      .addField('من قبل:', `${message.author.username}#${message.author.discriminator}`)
+      .addField('السبب', reason);
+      message.delete()
+      return bot.channels.get(modlog.id).sendEmbed(embed).catch(console.error);
+  }
+  });   
+
+
 // THIS  MUST  BE  THIS  WAY
 client.login(process.env.BOT_TOKEN);
