@@ -94,16 +94,16 @@ message.author.send("" + `  **
 !say                 | يكرر الكلام الذي تقولة
 !avatar              | صورتك في الدسكورد
 !embed               | يكرر الكلام بطريقة أخرى 
-!level               | معطل / لتعرف اللفل حقك
-!credit              | معطل / لتعرف فلوسك
+!level               |  لتعرف اللفل حقك
+!credit              |  لتعرف فلوسك
 تنبيه هام : كود الكرديت قيد التطوير ما تقدر تعطي احد كرديت هو قيد التطوير
 
 "اوامر السيرفرات" 
 
 !server                 | معلومات عن السيرفر
 !clear                  | لحذف الرسائل
-!bc                     |  معطل / لارسال رسالة برود كاست عادي
-!bc2                    | معطل / لارسال رسالة برود كاست مطور
+!bc                     |  لارسال رسالة برود كاست عادي
+!bc2                    |  لارسال رسالة برود كاست مطور
 !create colors          | لصناعة 200 لون
 !delete colors          | لحذف 200 لون
 !kick                   | لطرد الشخص
@@ -146,12 +146,13 @@ ct                      | لصناعة روم كتابي
 استضافة اللوق   : سوي روم باسم console
 تحذير : الاوامر اللي ما تشتغل قيد الاصلاح
 "الدعم الفني"
-:gear:            https://discord.gg/2yCdFZ | سيرفر الدعم 
+:gear:          https://discord.gg/ZPzcRfu    | سيرفر الدعم 
+:gear:            https://arabicobot.wixsite.com/arabicobot  | موقع البوت
 
 **`);
     }
 });
-
+https://arabicobot.wixsite.com/arabicobot
 
 
 // -ping
@@ -304,14 +305,14 @@ client.on('message' , message => {
 
 
 client.on('message' , message => {
-    if (message.content === "-support") {
+    if (message.content === "!support") {
         if(!message.channel.guild) return message.reply('This Command is Only For Servers');
      const embed = new Discord.RichEmbed()
  .setColor("RANDOM")
  .setThumbnail(client.user.avatarURL)
  .setAuthor(message.author.username, message.author.avatarURL)
  .setTitle('اظغط هنا لدخول سيرفر الدعم الفني')
- .setURL('https://discord.gg/6QrnTC')
+ .setURL('https://discord.gg/ZPzcRfu')
   message.channel.sendEmbed(embed);
    }
 });
@@ -986,6 +987,19 @@ message.react("??")
 }
 });
 
+
+client.on('message' , message => {
+    if (message.content === "!website") {
+        if(!message.channel.guild) return message.reply('This Command is Only For Servers');
+     const embed = new Discord.RichEmbed()
+ .setColor("RANDOM")
+ .setThumbnail(client.user.avatarURL)
+ .setAuthor(message.author.username, message.author.avatarURL)
+ .setTitle('اظغط هنا لدخول موقع البوت العربي')
+ .setURL('https://arabicobot.wixsite.com/arabicobot')
+  message.channel.sendEmbed(embed);
+   }
+});
 
 // THIS  MUST  BE  THIS  WAY
 client.login(process.env.BOT_TOKEN);
