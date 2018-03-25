@@ -152,7 +152,6 @@ ct                      | لصناعة روم كتابي
 **`);
     }
 });
-https://arabicobot.wixsite.com/arabicobot
 
 
 // -ping
