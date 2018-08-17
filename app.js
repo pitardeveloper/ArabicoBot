@@ -1001,35 +1001,6 @@ client.on('message' , message => {
 });
 
 
-client.on('guildMemberAdd', member => {
-  let channel = member.guild.channels.find('name','welcome');
-     if (!channel) return; 
-          let memberavatar = member.user.avatarURL
-        let embed = new Discord.RichEmbed()
-    .setThumbnail(memberavatar)
-       .setColor('BLUE')
-       .addField(':sunflower:  حياك الله منور السيرفر',`**[ ${member} ]**`,true)
-       .addField(' :levitate: انت رقم',`**[ ${member.guild.memberCount} ]**`,true)
-       channel.send(``)
-     channel.send({embed:embed});
-   });
-
-
-
-client.on('guildMemberRemove', member => {
-      let channel = member.guild.channels.find('name', 'welcome');
-        if (!channel) return; 
-        let memberavatar = member.user.avatarURL
-      let embed = new Discord.RichEmbed()
-          .setColor('RED')
-          .setThumbnail(member.avatar)
-          .addField(':x: لقد خرج ',`**[ ${member} ]**`,true)
-          .addField(':man_dancing:  تبقي',`**[ ${member.guild.memberCount} ]**`,true)      
-          channel.send(``)
-        channel.send({embed:embed});
-      });
-
-
 client.on("roleCreate",  rc => {
 const channel = rd.guild.channels.find("name", "console")
 if(channel) {
