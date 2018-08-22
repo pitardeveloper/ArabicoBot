@@ -984,6 +984,19 @@ client.on('message', message => {
   });
 
 
+var prefix = "!"
+client.on('message', message => {
+
+  if (message.content.startsWith(prefix + "arabickobol")) {
+  if (!message.channel.guild) return;
+  let args = message.content.split(" ").slice(1).join(' ');
+  client.channels.get("481733105284284417").send(
+      "\n" + "" + " ● تقرير الاقتراح : " + "" +
+      "\n" + "" + args + "")
+  }
+  });
+
+
    client.on('message', message => {
      if (message.content === "!suggestion") {
      let embed = new Discord.RichEmbed()
