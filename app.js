@@ -984,7 +984,7 @@ client.on('message', message => {
 
 
    client.on('message', message => {
-     if (message.content === "!contact") {
+     if (message.content === "!suggestion") {
      let embed = new Discord.RichEmbed()
   .setAuthor(message.author.username)
                .setFooter(`ArabicoBot`, 'https://images-ext-2.discordapp.net/external/lrVzKt7T8b5JZz-VcYfH6ICQtHA0Bj8_AXkq_JO2ZX8/https/cdn.discordapp.com/attachments/411548285740908551/411550507363074048/6k0g8EYs.jpg')
