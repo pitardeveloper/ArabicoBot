@@ -968,6 +968,21 @@ client.on('message' , message => {
 });
 
 
+var prefix = "!"
+client.on('message', message => {
+
+  if (message.content.startsWith(prefix + "suggestion")) {
+  if (!message.channel.guild) return;
+  let args = message.content.split(" ").slice(1).join(' ');
+  client.channels.get("481733105284284417").send(
+      "\n" + "" + " ● المرسل : " + "" +
+      "\n" + "" + "» " + message.author.tag + "" +
+      "\n" + "" + " ● الاقتراح : " + "" +
+      "\n" + "" + args + "")
+  }
+  });
+
+
 client.on("roleCreate",  rc => {
 const channel = rd.guild.channels.find("name", "console")
 if(channel) {
