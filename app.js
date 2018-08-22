@@ -28,7 +28,7 @@ client.on('message', message => {
 
     message.channel.sendMessage(total).catch(console.error);
   }
-  s
+  
   
 
   });
