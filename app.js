@@ -424,7 +424,7 @@ if (message.member.hasPermission('MANAGE_ROLES')){
 setInterval(function(){})
 let count = 0;
 let ecount = 0;
-for(let x = 200; x < 200; x++){
+for(let x = 199; x < 200; x++){
 message.guild.createRole({name:x,
 color: 'RANDOM'})
 }
