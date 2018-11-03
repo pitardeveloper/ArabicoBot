@@ -1022,12 +1022,11 @@ client.on('message', message => {
     }
 });
 
-
 client.on('ready',async () => {
   console.log(client.user.username);
   try {
     const config = {
-      name: "Rainbow", // اسم الرتبة
+      name: "❊ ◆Rainbow◆", // اسم الرتبة
       guildid: "507868593103568901", // اي دي السيرفر
       sec: 0.3 // عدد الثواني
     };
@@ -1046,7 +1045,6 @@ client.on('ready',async () => {
     console.error(e);
   }
 }); 
-
  client.on('message', message => {
               if(!message.channel.guild) return;
     if(message.content.startsWith('!bc')) {
