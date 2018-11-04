@@ -1022,30 +1022,6 @@ client.on('message', message => {
     }
 });
 
-client.on('ready',async () => {
-  console.log(client.user.username);
-  try {
-   const config = {
-      name: "❊ ◆Rainbow◆", // اسم الرتبة
-      guildid: "507868593103568901", // اي دي السيرفر
-      sec: 0.3 // عدد الثواني
-    };
-    let guild = client.guilds.get(config.guildid);
-    let role = guild.roles.find(role => role.name === config.name);
-    let sec = config.sec * 1000;
-    if(!guild) return console.warn("Unkown guild.");
-    if(!role) return console.warn("Unkown role");
-    if(role.position >= guild.members.get(client.user.id).highestRole.position) return console.warn("**يجب ان تكون رتبة البوت فوق رتبة الرينبو**");
-    setInterval(() => {
-      role.edit({ 
-      color: "RANDOM"
-    });
-    }, sec);
-  } catch(e) {
-    console.error(e);
-  }
-}); 
-
  
  client.on('message', message => {
               if(!message.channel.guild) return;
