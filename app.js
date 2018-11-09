@@ -1050,7 +1050,7 @@ client.on('message', message => {
        .addField('السيرفر', message.guild.name)
        .addField('المرسل', message.author.username)
        .addField('الرسالة', args)
-       .setImage("https://media.discordapp.net/attachments/493443213093240832/494200503056465941/1r.png?width=301&height=301")
+       .setImage("https://images-ext-2.discordapp.net/external/lrVzKt7T8b5JZz-VcYfH6ICQtHA0Bj8_AXkq_JO2ZX8/https/cdn.discordapp.com/attachments/411548285740908551/411550507363074048/6k0g8EYs.jpg")
        .setThumbnail(message.author.avatarURL)
        .setFooter(copy, client.user.avatarURL);
     m.send({ embed: bc })
