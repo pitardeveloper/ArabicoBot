@@ -78,8 +78,6 @@ message.author.send("االبوت العربي الجديد ذو الاوامر 
 اضافات ما توقف ابدا على البوت كل يوم نبدا برمجة للمساااء نقعد نبرمج البوت : :closed_book: 
 بوت محمي اقوى الحمايات ما يتهكر ابداا : :shield: 
 خالي من الفيروسات او اكواد خبيثة او خاصة لتهكير السيرفرات : :x:
-رابط اضافة البوت العربي 
-[https://discordapp.com/oauth2/authorize?client_id=414962445325697037&scope=bot&permissions=2146958591]
 مبرمج البوت العربي [! - IxkeemO_#0440]
 
 **`);
@@ -110,7 +108,11 @@ message.author.send("" + `  **
 !kick                   | لطرد الشخص
 !ban                    | لتبنيد الشخص
 !mute                   | لاعطاء العضو ميوت
-!unmute                 | لفك الميوت عن العضولفتح الشات
+!unmute                 | لفك الميوت عن العضو
+!mutechat               | لقفل الشات
+!unmutechat             | لفتح الشات
+!hidechat               | اخفاء الشات
+!unhidechat             | اظهار الشات
 !ct                     | لصناعة روم كتابي
 !cv                     | لصناعة روم صوتي
 !rooms                  | يطلع لك اسامي وارقام الرومات
@@ -171,7 +173,7 @@ message.author.send("" + `  **
       .addField(':globe_with_meridians:** نوع السيرفر**',`[** __${msg.guild.region}__ **]`,true)
       .addField(':medal:** __الرتب__**',`[** __${msg.guild.roles.size}__ **]`,true)
       .addField(':red_circle:**__ عدد الاعضاء__**',`[** __${msg.guild.memberCount}__ **]`,true)
-      .addField(':large_blue_circle:**__ عدد الاعضاء الاونلاين__**',`[** __${msg.guild.members.filter(m=>m.presence.status == 'online').size}__ **]`,true)
+      .addField(':blue_circle: **__ عدد الاعضاء الاونلاين__**',`[** __${msg.guild.members.filter(m=>m.presence.status == 'online').size}__ **]`,true)
       .addField(':pencil:**__ الرومات الكتابية__**',`[** __${msg.guild.channels.filter(m => m.type === 'text').size}__** ]`,true)
       .addField(':microphone:**__ رومات الصوت__**',`[** __${msg.guild.channels.filter(m => m.type === 'voice').size}__ **]`,true)
       .addField(':crown:**__ الأونـر__**',`**${msg.guild.owner}**`,true)
@@ -186,8 +188,7 @@ message.author.send("" + `  **
    client.on('message', message => {
      if (message.content === "!help") {
      let embed = new Discord.RichEmbed()
-  .setAuthor(message.author.username)
-               .setFooter(`ArabicoBot`, 'https://images-ext-2.discordapp.net/external/lrVzKt7T8b5JZz-VcYfH6ICQtHA0Bj8_AXkq_JO2ZX8/https/cdn.discordapp.com/attachments/411548285740908551/411550507363074048/6k0g8EYs.jpg')
+     .setFooter(`ArabicoBot`, 'https://images-ext-2.discordapp.net/external/lrVzKt7T8b5JZz-VcYfH6ICQtHA0Bj8_AXkq_JO2ZX8/https/cdn.discordapp.com/attachments/411548285740908551/411550507363074048/6k0g8EYs.jpg')
   .setColor("#9B59B6")
   .addField("تم ارسال الاوامر في الخاص + تاكد انك فاتح الخاص :]")
 
@@ -241,10 +242,10 @@ client.on("message", message => {
 
 client.on('message', message => {
     if(message.content.includes('discord.gg')){ 
-                                            if(!message.channel.guild) return message.reply('** advertising me on DM ? :thinking:   **');
+                                            if(!message.channel.guild) return message.reply('**يعني مدري انت مجنون ولا ايش في احد يرسل سيرفره لبوت ؟ :thinking: **');
         if (!message.member.hasPermissions(['ADMINISTRATOR'])){
         message.delete()
-    return message.reply(`**للاسف ما تقدر تنشر ههههههههههههههههههههههههههههه**`)
+    return message.reply(`**تم منع نشر روابط سيرفرات الدسكورد :x:**`)
     }
 }
 });
@@ -257,8 +258,8 @@ client.on('message' , message => {
  .setColor("RANDOM")
  .setThumbnail(client.user.avatarURL)
  .setAuthor(message.author.username, message.author.avatarURL)
- .setTitle('اظعط هنا لدعوة البوت الى سيرفرك')
- .setURL('https://discordapp.com/oauth2/authorize?client_id=414962445325697037&scope=bot&permissions=2146958591')
+ .setTitle('قريبا عودة البوت الى جميع السيرفرات !')
+ .setURL('discord.gg')
   message.channel.sendEmbed(embed);
    }
 });
@@ -602,7 +603,7 @@ client.on("message", message => {
   if (command === "!mute") {
         if (!message.member.hasPermission('MANAGE_ROLES')) return message.reply("** لا يوجد لديك برمشن 'Manage Roles' **").catch(console.error);
   let user = message.mentions.users.first();
-  let modlog = client.channels.find('name', 'console');
+  let modlog = client.channels.find('name', '✎・punishments');
   let muteRole = client.guilds.get(message.guild.id).roles.find('name', 'Muted');
   if (!muteRole) return message.reply("** لا يوجد رتبة الميوت 'Muted' + لازم تشيل خاصية Send Message **").catch(console.error);
   if (message.mentions.users.size < 1) return message.reply('** يجب عليك منشنت شخص اولاً**').catch(console.error);
@@ -638,7 +639,7 @@ return message.reply("**:white_check_mark: .. تم اعطاء العضو ميو�
   if (command === "!unmute") {
         if (!message.member.hasPermission('MANAGE_ROLES')) return message.reply("** لا يوجد لديك برمشن 'Manage Roles' **").catch(console.error);
   let user = message.mentions.users.first();
-  let modlog = client.channels.find('name', 'console');
+  let modlog = client.channels.find('name', '✎・punishments');
   let muteRole = client.guilds.get(message.guild.id).roles.find('name', 'Muted');
   if (!muteRole) return message.reply("** لا يوجد لديك رتبه الميوت 'Muted' + لازم تشيل خاصية Send Message **").catch(console.error);
   if (message.mentions.users.size < 1) return message.reply('** يجب عليك منشنت شخص اولاً**').catch(console.error);
@@ -666,7 +667,7 @@ return message.reply("**:white_check_mark: .. تم فك الميوت عن الش
 
 client.on('message', message => {
 
-       if(message.content === prefix + "!mutechannel") {
+       if(message.content === prefix + "mutechat") {
                            if(!message.channel.guild) return message.reply('** This command only for servers**');
 
    if(!message.member.hasPermission('MANAGE_MESSAGES')) return message.reply(' **__ليس لديك صلاحيات__**');
@@ -678,7 +679,7 @@ client.on('message', message => {
               });
                 }
 //viper
-    if(message.content === prefix + "!unmutechannel") {
+    if(message.content === prefix + "unmutechat") {
                         if(!message.channel.guild) return message.reply('** This command only for servers**');
 
    if(!message.member.hasPermission('MANAGE_MESSAGES')) return message.reply('**__ليس لديك صلاحيات__**');
@@ -693,6 +694,71 @@ client.on('message', message => {
          
        
 });
+
+   client.on("message", message => {
+  if (message.author.bot) return;
+  
+  let command = message.content.split(" ")[0];
+  
+  if (command === "!unmute") {
+        if (!message.member.hasPermission('MANAGE_ROLES')) return message.reply("** لا يوجد لديك برمشن 'Manage Roles' **").catch(console.error);
+  let user = message.mentions.users.first();
+  let modlog = client.channels.find('name', '✎・punishments');
+  let muteRole = client.guilds.get(message.guild.id).roles.find('name', 'Muted');
+  if (!muteRole) return message.reply("** لا يوجد لديك رتبه الميوت 'Muted' + لازم تشيل خاصية Send Message **").catch(console.error);
+  if (message.mentions.users.size < 1) return message.reply('** يجب عليك منشنت شخص اولاً**').catch(console.error);
+  const embed = new Discord.RichEmbed()
+    .setColor(0x00AE86)
+    .setTimestamp()
+    .addField('الأستعمال:', 'اسكت/احكي')
+    .addField('تم فك الميوت عن:', `${user.username}#${user.discriminator} (${user.id})`)
+    .addField('بواسطة:', `${message.author.username}#${message.author.discriminator}`)
+
+  if (!message.guild.member(client.user).hasPermission('MANAGE_ROLES_OR_PERMISSIONS')) return message.reply('** لا يوجد لدي برمشن Manage Roles **').catch(console.error);
+
+  if (message.guild.member(user).removeRole(muteRole.id)) {
+return message.reply("**:white_check_mark: .. تم فك الميوت عن الشخص **").catch(console.error);
+} else {
+    message.guild.member(user).removeRole(muteRole).then(() => {
+return message.reply("**:white_check_mark: .. تم فك الميوت عن الشخص **").catch(console.error);
+});
+  }
+
+};
+
+});
+
+
+client.on('message', message => {
+
+       if(message.content === prefix + "hidechat") {
+                           if(!message.channel.guild) return message.reply('** This command only for servers**');
+
+   if(!message.member.hasPermission('MANAGE_MESSAGES')) return message.reply(' **__ليس لديك صلاحيات__**');
+              message.channel.overwritePermissions(message.guild.id, {
+            READ_MESSAGES: false
+
+              }).then(() => {
+                  message.reply("**__تم اخفاء الشات__ :white_check_mark: **")
+              });
+                }
+//viper
+    if(message.content === prefix + "unhidechat") {
+                        if(!message.channel.guild) return message.reply('** This command only for servers**');
+
+   if(!message.member.hasPermission('MANAGE_MESSAGES')) return message.reply('**__ليس لديك صلاحيات__**');
+              message.channel.overwritePermissions(message.guild.id, {
+            READ_MESSAGES: true
+
+              }).then(() => {
+                  message.reply("**__تم اظهار الشات__:white_check_mark:**")
+              });
+                }
+                
+         
+       
+});
+
 
 
 var prefix = "!"
@@ -712,9 +778,9 @@ client.on('message', message => {
   if(!message.guild.member(client.user).hasPermission("KICK_MEMBERS")) return message.reply("**انا ممعي برمشن Kick Members :(**");
   let user = message.mentions.users.first();
   let reason = message.content.split(" ").slice(2).join(" ");
-  /*let b5bzlog = client.channels.find("name", "5bz-log");
+  let b5bzlog = client.channels.find("name", "✎・punishments");
 
-  if(!b5bzlog) return message.reply("I've detected that this server doesn't have a 5bz-log text channel.");*/
+  if(!b5bzlog) return message.reply("اكتشفت انه لا يوجد روم ✎・punishments لكي يتم ارسال الاوامر فيه");*/
   if (message.mentions.users.size < 1) return message.reply("**منشن شخص**");
   if(!reason) return message.reply ("**اكتب سبب الطرد**");
   if (!message.guild.member(user)
@@ -723,7 +789,7 @@ client.on('message', message => {
   message.guild.member(user).kick();
 
   const kickembed = new Discord.RichEmbed()
-  .setAuthor(`KICKED!`, user.displayAvatarURL)
+  .setAuthor(`تمت مقاضاة المخالف بالطرد`, user.displayAvatarURL)
   .setColor("RANDOM")
   .setTimestamp()
   .addField("**المخالف :**",  '**[ ' + `${user.tag}` + ' ]**')
@@ -754,9 +820,9 @@ client.on('message', message => {
   if(!message.guild.member(client.user).hasPermission("BAN_MEMBERS")) return message.reply("**انا ممعي برمشن Ban Members :(**");
   let user = message.mentions.users.first();
   let reason = message.content.split(" ").slice(2).join(" ");
-  /*let b5bzlog = client.channels.find("name", "5bz-log");
+  let b5bzlog = client.channels.find("name", "✎・punishments");
 
-  if(!b5bzlog) return message.reply("I've detected that this server doesn't have a 5bz-log text channel.");*/
+  if(!b5bzlog) return message.reply("I've detected that this server doesn't have a ✎・ban-kick-warn text channel.");*/
   if (message.mentions.users.size < 1) return message.reply("**منشن شخص**");
   if(!reason) return message.reply ("**اكتب سبب الطرد**");
   if (!message.guild.member(user)
@@ -765,7 +831,7 @@ client.on('message', message => {
   message.guild.member(user).ban(7, user);
 
   const banembed = new Discord.RichEmbed()
-  .setAuthor(`BANNED!`, user.displayAvatarURL)
+  .setAuthor(`تمت مقاضاة المخالف بالباند`, user.displayAvatarURL)
   .setColor("RANDOM")
   .setTimestamp()
   .addField("**المخالف :**",  '**[ ' + `${user.tag}` + ' ]**')
