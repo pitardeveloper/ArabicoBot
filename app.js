@@ -80,7 +80,7 @@ message.author.send("االبوت العربي الجديد ذو الاوامر 
 خالي من الفيروسات او اكواد خبيثة او خاصة لتهكير السيرفرات : :x:
 رابط اضافة البوت العربي 
 [https://discordapp.com/oauth2/authorize?client_id=414962445325697037&scope=bot&permissions=2146958591]
-مبرمج البوت العربي [ＰＩＴＡＲ ＩＳ ＨＥＲＥ#5333]
+مبرمج البوت العربي [! - IxkeemO_#0440]
 
 **`);
     }
@@ -90,30 +90,28 @@ message.author.send("االبوت العربي الجديد ذو الاوامر 
 client.on('message', message => {
      if (message.content === "!help") {
 message.author.send("" + `  **
-!ping                | سرعة الأتصال
+!ping                | سرعة الأتصال البوت
 !id                  | معلومــات عــن حســابــك
 !say                 | يكرر الكلام الذي تقولة
 !avatar              | صورتك في الدسكورد
 !embed               | يكرر الكلام بطريقة أخرى 
 !level               |  لتعرف اللفل حقك
 !credit              |  لتعرف فلوسك
-تنبيه هام : كود الكرديت قيد التطوير ما تقدر تعطي احد كرديت هو قيد التطوير
+تنبيه هام : الكردتس واللفلز مقفلين حاليا ما تقدر تستخدمهم
+تنبيه هام : كوماند ساي + امبد مقفلين للصيانة
+
 
 "اوامر السيرفرات" 
 
 !server                 | معلومات عن السيرفر
 !clear                  | لحذف الرسائل
 !bc                     |  لارسال رسالة برود كاست عادي
-!bc2                    |  لارسال رسالة برود كاست مطور
 !create colors          | لصناعة 200 لون
-!delete colors          | لحذف 200 لون
 !kick                   | لطرد الشخص
 !ban                    | لتبنيد الشخص
 !mute                   | لاعطاء العضو ميوت
-!unmute                 | لفك الميوت عن العضو
-!mutechannel            | لتقفيل الشات
-!unmutechannel          | لفتح الشات
-ct                      | لصناعة روم كتابي
+!unmute                 | لفك الميوت عن العضولفتح الشات
+!ct                     | لصناعة روم كتابي
 !cv                     | لصناعة روم صوتي
 !rooms                  | يطلع لك اسامي وارقام الرومات
 !create server          | صيانة / يسويلك سيرفر كاامل
@@ -126,29 +124,24 @@ ct                      | لصناعة روم كتابي
 !support           | لدخول سيرفر المساعدة الخاص بالبوت
 !contact           | لارسال رسالة الى صاحب البوت
 
+تنبيه هام : سيرفر سبورت البوت قادم مرة اخرى قريبا
+
 "اوامر العاب"
 
-!challenges             | لمعرفة ماذا يوجد من تحديات
-!مريم                      | لتلعب لعبة مريم
-!عقاب                        | لتعاقب واحد
-!غرد               | للتغريد الى شخص
-!cat             | يرسلك صورة بسه 
-!صراحة                | الصراحة
-!كت تويت                      | الكت تويت
-!لو خيروك                      | لتلعب لعبة لو خيروك
+!challenge         | لتلعب تحدي
+!mariam            | لتلعب لعبة مريم
+!punish            | لتعاقب شخص 
+!post              | للتغريد
+!cat               | يرسلك صورة قطوة او بسة
+!saraha            | لعبة صراحة
+!cut               | كت تويت
+!lokhayrok         | لعبة لو خيروك
+
+تم ايقاف لعبة مريم والتغريدات والامر اللي يرسلك صورة قطة للصيانة الفنية :x:
 
 "ديانات"
 
-!اذكار                    | لقراءة اذكار
-
-"استضافات"
-
-استضافة الترحيب : سوي روم باسم welcome
-استضافة اللوق   : سوي روم باسم console
-"الدعم الفني"
-:gear:          https://discord.gg/ZPzcRfu    | سيرفر الدعم 
-:gear:            https://arabicobot.wixsite.com/arabicobot  | موقع البوت
-
+!azkar             | لقرائة الاذكار
 
 **`);
     }
@@ -272,7 +265,7 @@ client.on('message' , message => {
 
 
 client.on('message' , message => {
-    if (message.content === "!support") {
+    if (message.content === "!supportfalse") {
         if(!message.channel.guild) return message.reply('This Command is Only For Servers');
      const embed = new Discord.RichEmbed()
  .setColor("RANDOM")
@@ -286,7 +279,7 @@ client.on('message' , message => {
 
 
 client.on('message', message => {
-     if (message.content === "!challenges") {
+     if (message.content === "!challengefalse") {
      let embed = new Discord.RichEmbed()
   .setAuthor(message.author.username)
                .setFooter(`ArabicoBot`, 'https://images-ext-2.discordapp.net/external/lrVzKt7T8b5JZz-VcYfH6ICQtHA0Bj8_AXkq_JO2ZX8/https/cdn.discordapp.com/attachments/411548285740908551/411550507363074048/6k0g8EYs.jpg')
@@ -302,7 +295,7 @@ client.on('message', message => {
 
 
 client.on('message', message => {
-     if (message.content === "!challenge") {
+     if (message.content === "!challengefalse") {
      let embed = new Discord.RichEmbed()
   .setAuthor(message.author.username)
                .setFooter(`ArabicoBot`, 'https://images-ext-2.discordapp.net/external/lrVzKt7T8b5JZz-VcYfH6ICQtHA0Bj8_AXkq_JO2ZX8/https/cdn.discordapp.com/attachments/411548285740908551/411550507363074048/6k0g8EYs.jpg')
@@ -317,7 +310,7 @@ client.on('message', message => {
 
 
 client.on('message', message => {
-     if (message.content === "!challenge2") {
+     if (message.content === "!challenge2false") {
      let embed = new Discord.RichEmbed()
   .setAuthor(message.author.username)
                .setFooter(`ArabicoBot`, 'https://images-ext-2.discordapp.net/external/lrVzKt7T8b5JZz-VcYfH6ICQtHA0Bj8_AXkq_JO2ZX8/https/cdn.discordapp.com/attachments/411548285740908551/411550507363074048/6k0g8EYs.jpg')
@@ -332,7 +325,7 @@ client.on('message', message => {
   
   
 client.on('message', message => {
-     if (message.content === "!challenge3") {
+     if (message.content === "!challenge3false") {
      let embed = new Discord.RichEmbed()
   .setAuthor(message.author.username)
                .setFooter(`ArabicoBot`, 'https://images-ext-2.discordapp.net/external/lrVzKt7T8b5JZz-VcYfH6ICQtHA0Bj8_AXkq_JO2ZX8/https/cdn.discordapp.com/attachments/411548285740908551/411550507363074048/6k0g8EYs.jpg')
@@ -347,7 +340,7 @@ client.on('message', message => {
 
 
 client.on('message', message => {
-     if (message.content === "!challenge4") {
+     if (message.content === "!challenge4false") {
      let embed = new Discord.RichEmbed()
   .setAuthor(message.author.username)
                .setFooter(`ArabicoBot`, 'https://images-ext-2.discordapp.net/external/lrVzKt7T8b5JZz-VcYfH6ICQtHA0Bj8_AXkq_JO2ZX8/https/cdn.discordapp.com/attachments/411548285740908551/411550507363074048/6k0g8EYs.jpg')
@@ -361,7 +354,7 @@ client.on('message', message => {
 });
 
 client.on('message', message => {
-     if (message.content === "!challenge5") {
+     if (message.content === "!challenge5false") {
      let embed = new Discord.RichEmbed()
   .setAuthor(message.author.username)
                .setFooter(`ArabicoBot`, 'https://images-ext-2.discordapp.net/external/lrVzKt7T8b5JZz-VcYfH6ICQtHA0Bj8_AXkq_JO2ZX8/https/cdn.discordapp.com/attachments/411548285740908551/411550507363074048/6k0g8EYs.jpg')
@@ -376,7 +369,7 @@ client.on('message', message => {
 
 
 client.on('message', message => {
-     if (message.content === "!challenge6") {
+     if (message.content === "!challenge6false") {
      let embed = new Discord.RichEmbed()
   .setAuthor(message.author.username)
                .setFooter(`ArabicoBot`, 'https://images-ext-2.discordapp.net/external/lrVzKt7T8b5JZz-VcYfH6ICQtHA0Bj8_AXkq_JO2ZX8/https/cdn.discordapp.com/attachments/411548285740908551/411550507363074048/6k0g8EYs.jpg')
@@ -391,7 +384,7 @@ client.on('message', message => {
 
 
 client.on('message', message => {
-     if (message.content === "!challenge7") {
+     if (message.content === "!challenge7false") {
      let embed = new Discord.RichEmbed()
   .setAuthor(message.author.username)
                .setFooter(`ArabicoBot`, 'https://images-ext-2.discordapp.net/external/lrVzKt7T8b5JZz-VcYfH6ICQtHA0Bj8_AXkq_JO2ZX8/https/cdn.discordapp.com/attachments/411548285740908551/411550507363074048/6k0g8EYs.jpg')
@@ -481,7 +474,7 @@ client.on('message', message => {
 
 
 client.on('message', message => {
-  if (message.content === `!كت تويت`) {
+  if (message.content === `!cut`) {
 message.channel.sendMessage({embed: {
   color: 3547003,
   description: `${cuttweet[Math.floor(Math.random() * cuttweet.length)]}`
@@ -553,7 +546,7 @@ const Sra7a = [
 ]
 
    client.on('message', message => {
- if (message.content.startsWith('!صراحة')) {
+ if (message.content.startsWith('!saraha')) {
      if(!message.channel.guild) return message.reply('** This command only for servers **');
   var client= new Discord.RichEmbed()
   .setTitle("لعبة صراحة ..")
@@ -572,7 +565,7 @@ const Sra7a = [
 var rebel = ["https://f.top4top.net/p_682it2tg6.png","https://e.top4top.net/p_682a1cus5.png","https://d.top4top.net/p_682pycol4.png","https://c.top4top.net/p_682vqehy3.png","https://b.top4top.net/p_682mlf9d2.png","https://a.top4top.net/p_6827dule1.png","https://b.top4top.net/p_682g1meb10.png","https://a.top4top.net/p_682jgp4v9.png","https://f.top4top.net/p_682d4joq8.png","https://e.top4top.net/p_6828o0e47.png","https://d.top4top.net/p_6824x7sy6.png","https://c.top4top.net/p_682gzo2l5.png","https://b.top4top.net/p_68295qg04.png","https://a.top4top.net/p_682zrz6h3.png","https://f.top4top.net/p_6828vkzc2.png","https://e.top4top.net/p_682i8tb11.png"]
     client.on('message', message => {
         var args = message.content.split(" ").slice(1);
-    if(message.content.startsWith(prefix + 'لو خيروك')) {
+    if(message.content.startsWith(prefix + 'lokhayrok')) {
          var cat = new Discord.RichEmbed()
 .setImage(rebel[Math.floor(Math.random() * rebel.length)])
 message.channel.sendEmbed(cat);
@@ -733,7 +726,7 @@ client.on('message', message => {
   .setAuthor(`KICKED!`, user.displayAvatarURL)
   .setColor("RANDOM")
   .setTimestamp()
-  .addField("**المطرود :**",  '**[ ' + `${user.tag}` + ' ]**')
+  .addField("**المخالف :**",  '**[ ' + `${user.tag}` + ' ]**')
   .addField("**من قبل :**", '**[ ' + `${message.author.tag}` + ' ]**')
   .addField("**السبب :**", '**[ ' + `${reason}` + ' ]**')
   message.channel.send({
@@ -775,7 +768,7 @@ client.on('message', message => {
   .setAuthor(`BANNED!`, user.displayAvatarURL)
   .setColor("RANDOM")
   .setTimestamp()
-  .addField("**المبند :**",  '**[ ' + `${user.tag}` + ' ]**')
+  .addField("**المخالف :**",  '**[ ' + `${user.tag}` + ' ]**')
   .addField("**من قبل :**", '**[ ' + `${message.author.tag}` + ' ]**')
   .addField("**السبب :**", '**[ ' + `${reason}` + ' ]**')
   message.channel.send({
@@ -845,7 +838,7 @@ const Za7f = [
 
 
  client.on('message', message => {
-   if (message.content.startsWith("!عقاب")) {
+   if (message.content.startsWith("!punish")) {
                 if(!message.channel.guild) return message.reply('** This command only for servers**');
   var embed = new Discord.RichEmbed()
   .setColor('RANDOM')
@@ -941,7 +934,7 @@ const adkar = [
 ]
 client.on('message', message => {
 if (message.author.bot) return;
-if (message.content.startsWith('!اذكار')) {
+if (message.content.startsWith('!azkar')) {
   if(!message.channel.guild) return;
 var client= new Discord.RichEmbed()
 .setTitle("اذكار")
@@ -956,7 +949,7 @@ message.react("??")
 
 
 client.on('message' , message => {
-    if (message.content === "!website") {
+    if (message.content === "!websitefalse") {
         if(!message.channel.guild) return message.reply('This Command is Only For Servers');
      const embed = new Discord.RichEmbed()
  .setColor("RANDOM")
@@ -973,7 +966,7 @@ client.on('message', msg => {
   //Code By : ‡ ♪ ℬℐℓѦℓ✋ ‡#2026
   if(msg.content.startsWith('!suggestion')) {
     if(!msg.channel.guild) return msg.reply('** هاذا الامر فقط للسيرفرات**');
-    if(!msg.guild.channels.find('name', 'suggestions')) return msg.reply('**الرجاء إضافة روم بإسم (suggestions)**');
+    if(!msg.guild.channels.find('name', '✎・اقــتــراحــات')) return msg.reply('**الرجاء إضافة روم بإسم (✎・اقــتــراحــات)**');
     let args = msg.content.split(" ").slice(1);
     if(!args[1]) return msg.reply('الرجاء كتابة الاقتراح')
     //غيره على حسب اسم روم الاقتراحات او سوي مثل اسم الروم الموجود هنا
@@ -998,29 +991,16 @@ client.on('message', msg => {
 var prefix = "!"
 client.on('message', message => {
 
-  if (message.content.startsWith(prefix + "arabickobol")) {
+  if (message.content.startsWith(prefix + "accept")) {
   if (!message.channel.guild) return;
   let args = message.content.split(" ").slice(1).join(' ');
-  client.channels.get("481733105284284417").send(
+  client.channels.get("714229715136675921").send(
       "\n" + "" + " ● تقرير الاقتراح : " + "" +
       "\n" + "" + args + "")
   }
   });
-
-
-   client.on('message', message => {
-     if (message.content === "!suggestion") {
-     let embed = new Discord.RichEmbed()
-  .setAuthor(message.author.username)
-               .setFooter(`ArabicoBot`, 'https://images-ext-2.discordapp.net/external/lrVzKt7T8b5JZz-VcYfH6ICQtHA0Bj8_AXkq_JO2ZX8/https/cdn.discordapp.com/attachments/411548285740908551/411550507363074048/6k0g8EYs.jpg')
-  .setColor("#9B59B6")
-  .addField("تم ارسال الاقتراح الخاص بك")
   
      
-     
-  message.channel.sendEmbed(embed);
-    }
-});
 
  
  client.on('message', message => {
