@@ -662,6 +662,38 @@ return message.reply("**:white_check_mark: .. تم فك الميوت عن الش
 
 });
 
+
+client.on('message', message => {
+
+       if(message.content === prefix + "hidechat") {
+                           if(!message.channel.guild) return message.reply('** This command only for servers**');
+
+   if(!message.member.hasPermission('MANAGE_MESSAGES')) return message.reply(' **__ليس لديك صلاحيات__**');
+              message.channel.overwritePermissions(message.guild.id, {
+            READ_MESSAGES: false
+
+              }).then(() => {
+                  message.reply("**__تم اخفاء الشات__ :white_check_mark: **")
+              });
+                }
+//viper
+    if(message.content === prefix + "unhidechat") {
+                        if(!message.channel.guild) return message.reply('** This command only for servers**');
+
+   if(!message.member.hasPermission('MANAGE_MESSAGES')) return message.reply('**__ليس لديك صلاحيات__**');
+              message.channel.overwritePermissions(message.guild.id, {
+            READ_MESSAGES: true
+
+              }).then(() => {
+                  message.reply("**__تم اظهار الشات__:white_check_mark:**")
+              });
+                }
+                
+         
+       
+});
+
+
 client.on('message', message => {
 
        if(message.content === prefix + "mutechat") {
@@ -745,7 +777,7 @@ client.on('message', message => {
   let reason = message.content.split(" ").slice(2).join(" ");
   let b5bzlog = client.channels.find("name", "✎・punishments");
 
-  if(!b5bzlog) return message.reply("اكتشفت انه لا يوجد روم ✎・punishments لكي يتم ارسال الاوامر فيه");*/
+  if(!b5bzlog) return message.reply("اكتشفت انه لا يوجد روم ✎・punishments لكي يتم ارسال الاوامر فيه");
   if (message.mentions.users.size < 1) return message.reply("**منشن شخص**");
   if(!reason) return message.reply ("**اكتب سبب الطرد**");
   if (!message.guild.member(user)
@@ -787,7 +819,7 @@ client.on('message', message => {
   let reason = message.content.split(" ").slice(2).join(" ");
   let b5bzlog = client.channels.find("name", "✎・punishments");
 
-  if(!b5bzlog) return message.reply("I've detected that this server doesn't have a ✎・ban-kick-warn text channel.");*/
+  if(!b5bzlog) return message.reply("I've detected that this server doesn't have a ✎・ban-kick-warn text channel.");
   if (message.mentions.users.size < 1) return message.reply("**منشن شخص**");
   if(!reason) return message.reply ("**اكتب سبب الطرد**");
   if (!message.guild.member(user)
