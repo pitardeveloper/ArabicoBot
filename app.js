@@ -667,6 +667,37 @@ return message.reply("**:white_check_mark: .. تم فك الميوت عن الش
 
 client.on('message', message => {
 
+       if(message.content === prefix + "hidechat") {
+                           if(!message.channel.guild) return message.reply('** This command only for servers**');
+
+   if(!message.member.hasPermission('MANAGE_MESSAGES')) return message.reply(' **__ليس لديك صلاحيات__**');
+              message.channel.overwritePermissions(message.guild.id, {
+            READ_MESSAGES: false
+
+              }).then(() => {
+                  message.reply("**__تم اخفاء الشات__ :white_check_mark: **")
+              });
+                }
+//viper
+    if(message.content === prefix + "unhidechat") {
+                        if(!message.channel.guild) return message.reply('** This command only for servers**');
+
+   if(!message.member.hasPermission('MANAGE_MESSAGES')) return message.reply('**__ليس لديك صلاحيات__**');
+              message.channel.overwritePermissions(message.guild.id, {
+            READ_MESSAGES: true
+
+              }).then(() => {
+                  message.reply("**__تم اظهار الشات__:white_check_mark:**")
+              });
+                }
+                
+         
+       
+});
+
+
+client.on('message', message => {
+
        if(message.content === prefix + "mutechat") {
                            if(!message.channel.guild) return message.reply('** This command only for servers**');
 
@@ -727,38 +758,6 @@ return message.reply("**:white_check_mark: .. تم فك الميوت عن الش
 };
 
 });
-
-
-client.on('message', message => {
-
-       if(message.content === prefix + "hidechat") {
-                           if(!message.channel.guild) return message.reply('** This command only for servers**');
-
-   if(!message.member.hasPermission('MANAGE_MESSAGES')) return message.reply(' **__ليس لديك صلاحيات__**');
-              message.channel.overwritePermissions(message.guild.id, {
-            READ_MESSAGES: false
-
-              }).then(() => {
-                  message.reply("**__تم اخفاء الشات__ :white_check_mark: **")
-              });
-                }
-//viper
-    if(message.content === prefix + "unhidechat") {
-                        if(!message.channel.guild) return message.reply('** This command only for servers**');
-
-   if(!message.member.hasPermission('MANAGE_MESSAGES')) return message.reply('**__ليس لديك صلاحيات__**');
-              message.channel.overwritePermissions(message.guild.id, {
-            READ_MESSAGES: true
-
-              }).then(() => {
-                  message.reply("**__تم اظهار الشات__:white_check_mark:**")
-              });
-                }
-                
-         
-       
-});
-
 
 
 var prefix = "!"
