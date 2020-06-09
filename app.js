@@ -35,7 +35,7 @@ client.on('message', message => {
 
 // playing
 client.on('ready', () => {
-                                                                                                                                                                                                                                                                              client.user.setGame(`!help | ArabicoBot`,'https://www.twitch.tv/v5bz');
+                                                                                                                                                                                                                                                                              client.user.setGame(`!help | ArabicoBot`,'https://www.twitch.tv/kimomixpro');
 });
 
 
