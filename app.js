@@ -34,11 +34,10 @@ client.on('message', message => {
   });
 
 // playing
-client.on("ready", () => {
-  client.user.setStatus("Idle");
-  
-  client.user.setActivity(`ArabicBot | Type !help For Help`, { type: "PLAYING" });
+client.on('ready', () => {
+                                                                                                                                                                                                                                                                              client.user.setGame(`!help | ArabicoBot`,'https://www.twitch.tv/kimomixpro');
 });
+
 
 client.on("message", msg => {
            var prefix = "!";
