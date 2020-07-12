@@ -1082,7 +1082,7 @@ client.on('message', msg => {
 var prefix = "!"
 client.on('message', message => {
 
-  if (message.content.startsWith(prefix + "accept")) {
+  if (message.content.startsWith(prefix + "haccept")) {
   if (!message.channel.guild) return;
   let args = message.content.split(" ").slice(1).join(' ');
   client.channels.get("714229715136675921").send(
