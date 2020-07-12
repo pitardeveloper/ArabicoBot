@@ -680,7 +680,7 @@ client.on('message', message => {
               });
                 }
 //viper
-    if(message.content === prefix + "unhidechat") {
+    if(message.content === prefix + "showchat") {
                         if(!message.channel.guild) return message.reply('** This command only for servers**');
 
    if(!message.member.hasPermission('MANAGE_MESSAGES')) return message.reply('**__ليس لديك صلاحيات__**');
