@@ -1097,7 +1097,7 @@ client.on('message', message => {
   if (message.content.startsWith(prefix + "accept")) {
   if (!message.channel.guild) return;
   let args = message.content.split(" ").slice(1).join(' ');
-  client.channels.get("731705255619854337").send(
+  client.channels.get("731726734701101068").send(
       "\n" + "" + " ● تقرير الاقتراح : " + "" +
       "\n" + "" + args + "")
   }
