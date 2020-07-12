@@ -34,10 +34,11 @@ client.on('message', message => {
   });
 
 // playing
-client.on('ready', () => {
-                                                                                                                                                                                                                                                                              client.user.setGame(`!help | ArabicoBot`,'https://www.twitch.tv/kimomixpro');
+client.on("ready", () => {
+  client.user.setStatus("Idle");
+  
+  client.user.setActivity(`ArabicBot | Type !help For Help`, { type: "PLAYING" });
 });
-
 
 client.on("message", msg => {
            var prefix = "!";
@@ -1084,7 +1085,7 @@ client.on('message', message => {
     let reaction2 = msg.createReactionCollector(reaction2Filter, { time: 12000 });
     reaction1.on("collect", r => {
     message.channel.send(`☑ | تم ارسال البرود كاست الى جميع الاعضاء الموجودين في السيرفر  ${message.guild.members.size}`).then(m => m.delete(5000));
-    message.guild.members.forEach(m => {
+    message.guild.members.forEach(m => { 
     var bc = new
        Discord.RichEmbed()
        .setColor('RANDOM')
@@ -1109,4 +1110,4 @@ client.on('message', message => {
 
 
 // THIS  MUST  BE  THIS  WAY
-client.login(process.env.BOT_TOKEN);
+client.login(process.env.BOT_TOKEN); 
