@@ -467,9 +467,9 @@ client.on('message', message => {
     if(message.content === "!bot") {
         const embed = new Discord.RichEmbed()
         .setColor("#00FFFF")
-        .setDescription(`**السيرفرات**?? **__${client.guilds.size}__**
-**المستخدمين**?? **__${client.users.size}__**
-**الرومات**?? **__${client.channels.size}__** `)
+        .setDescription(`**السيرفرات** >> **__${client.guilds.size}__**
+**المستخدمين** >> **__${client.users.size}__**
+**الرومات** >> **__${client.channels.size}__** `)
                message.channel.sendEmbed(embed);
            }
 });
@@ -1027,32 +1027,6 @@ client.on('message' , message => {
    }
 });
 
-
-client.on('message', msg => {
-  //Code By : ‡ ♪ ℬℐℓѦℓ✋ ‡#2026
-  if(msg.content.startsWith('!suggestion')) {
-    if(!msg.channel.guild) return msg.reply('** هاذا الامر فقط للسيرفرات**');
-    if(!msg.guild.channels.find('name', '✎・اقــتــراحــات')) return msg.reply('**الرجاء إضافة روم بإسم (✎・اقــتــراحــات)**');
-    let args = msg.content.split(" ").slice(1);
-    if(!args[1]) return msg.reply('الرجاء كتابة الاقتراح')
-    //غيره على حسب اسم روم الاقتراحات او سوي مثل اسم الروم الموجود هنا
-    if(msg.guild.channels.find('name', '✎・اقــتــراحــات')) {
-      //غيره هنا كمان اذا غيرت فوق
-      msg.guild.channels.find('name', '✎・اقــتــراحــات').send(`
-      تم الاقتراح من قبل : ${msg.member}
-
-      الاقتراح : 
-      ${args.join(" ").split(msg.mentions.members.first()).slice(' ')}
-      `)
-      .then(function (message) {
-        message.react('✅')
-        message.react('❌')
-      })
-      }
-    }
-
-});
-
 client.on('message', msg => {
   //Code By : ‡ ♪ ℬℐℓѦℓ✋ ‡#2026
   if(msg.content.startsWith('!suggest')) {
@@ -1077,19 +1051,6 @@ client.on('message', msg => {
     }
 
 });
-
-
-var prefix = "!"
-client.on('message', message => {
-
-  if (message.content.startsWith(prefix + "haccept")) {
-  if (!message.channel.guild) return;
-  let args = message.content.split(" ").slice(1).join(' ');
-  client.channels.get("714229715136675921").send(
-      "\n" + "" + " ● تقرير الاقتراح : " + "" +
-      "\n" + "" + args + "")
-  }
-  });
   
      var prefix = "!"
 client.on('message', message => {
