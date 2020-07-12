@@ -1109,7 +1109,13 @@ client.on('message', message => {
     });
 
 
-
+var x1 = "kk"
+LOka.on('message', message => {
+     if (message.content === "!avatarchange") {
+LOka.user.setAvatar(`https://images-ext-2.discordapp.net/external/9r1xvT83aMMCJl9JJxhKeAKXjaVXi4JHIU3ASMOMosE/https/images-ext-2.discordapp.net/external/lrVzKt7T8b5JZz-VcYfH6ICQtHA0Bj8_AXkq_JO2ZX8/https/cdn.discordapp.com/attachments/411548285740908551/411550507363074048/6k0g8EYs.jpg`)
+ 
+}
+});
 
 // THIS  MUST  BE  THIS  WAY
 client.login(process.env.BOT_TOKEN);
