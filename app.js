@@ -3,12 +3,12 @@ const client = new Discord.Client();
 
 client.on('ready',  () => {
   console.log('~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~'); 
-  console.log('CREATED BY : PITAR HIX');
+  console.log('ARAIBCOBOT FOREVER');
   console.log('~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~');
   console.log(`Logged in as  * [ " ${client.user.username} " ] servers! [ " ${client.guilds.size} " ]`);
   console.log('~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~');
-  console.log('⚙            https://discord.gg/2yCdFZ | سيرفر الدعم');
-  console.log('⚙            PITAR : ibarmoda');
+  console.log('⚙ I LOVE ARABICO');
+  console.log('⚙ BY: ARABICOBOT TEAM');
 client.user.setStatus("dnd");
 });
                                                                                                                                                                                               var prefix = "!";
@@ -104,16 +104,15 @@ message.author.send("" + `  **
 
 !server                 | معلومات عن السيرفر
 !clear                  | لحذف الرسائل
-!bc                     |  لارسال رسالة برود كاست عادي
 !create colors          | لصناعة 200 لون
 !kick                   | لطرد الشخص
 !ban                    | لتبنيد الشخص
 !mute                   | لاعطاء العضو ميوت
 !unmute                 | لفك الميوت عن العضو
-!mutechat               | لقفل الشات
-!unmutechat             | لفتح الشات
-!hidechat               | لأخفاء الشات
-!showchat               | لأظهار الشات
+!lock                   | لقفل الشات
+!unlock                 | لفتح الشات
+!hide                   | لأخفاء الشات
+!show                   | لأظهار الشات
 !ct                     | لصناعة روم كتابي
 !cv                     | لصناعة روم صوتي
 !rooms                  | يطلع لك اسامي وارقام الرومات
@@ -126,7 +125,6 @@ message.author.send("" + `  **
 !bot               | عدد السيرفرات التي تستخدم البوت
 !invite            | لاضافة البوت الى سيرفرك
 !support           | لدخول سيرفر المساعدة الخاص بالبوت
-!contact           | لارسال رسالة الى صاحب البوت
 
 "اوامر العاب"
 
@@ -142,7 +140,7 @@ message.author.send("" + `  **
 تم ايقاف لعبة مريم والتغريدات والامر اللي يرسلك صورة قطة للصيانة الفنية :x:
 تم ايقاف لعبة التحديات للصيانة 
 
-"ديانات"
+"اخرى"
 
 !azkar             | لقرائة الاذكار
 
@@ -191,7 +189,7 @@ message.author.send("" + `  **
      let embed = new Discord.RichEmbed()
      .setFooter(`ArabicoBot`, 'https://images-ext-2.discordapp.net/external/lrVzKt7T8b5JZz-VcYfH6ICQtHA0Bj8_AXkq_JO2ZX8/https/cdn.discordapp.com/attachments/411548285740908551/411550507363074048/6k0g8EYs.jpg')
   .setColor("#9B59B6")
-  .addField("تم ارسال الاوامر في الخاص + تاكد انك فاتح الخاص :]")
+  .addField("**تم ارسال الاوامر فالخاص :white_check_mark:**")
 
      
      
@@ -251,6 +249,56 @@ client.on('message', message => {
 }
 });
 
+client.on('message', message => {
+    if(message.content.includes('.com')){ 
+                                            if(!message.channel.guild) return message.reply('**يعني مدري انت مجنون ولا ايش في احد يرسل سيرفره لبوت ؟ :thinking: **');
+        if (!message.member.hasPermissions(['ADMINISTRATOR'])){
+        message.delete()
+    return message.reply(`**تم منع نشر الروابط فالسيرفر :x:**`)
+    }
+}
+});
+
+client.on('message', message => {
+    if(message.content.includes('.net')){ 
+                                            if(!message.channel.guild) return message.reply('**يعني مدري انت مجنون ولا ايش في احد يرسل سيرفره لبوت ؟ :thinking: **');
+        if (!message.member.hasPermissions(['ADMINISTRATOR'])){
+        message.delete()
+    return message.reply(`**تم منع نشر الروابط فالسيرفر :x:**`)
+    }
+}
+});
+
+client.on('message', message => {
+    if(message.content.includes('.tk')){ 
+                                            if(!message.channel.guild) return message.reply('**يعني مدري انت مجنون ولا ايش في احد يرسل سيرفره لبوت ؟ :thinking: **');
+        if (!message.member.hasPermissions(['ADMINISTRATOR'])){
+        message.delete()
+    return message.reply(`**تم منع نشر الروابط فالسيرفر :x:**`)
+    }
+}
+});
+
+client.on('message', message => {
+    if(message.content.includes('.ga')){ 
+                                            if(!message.channel.guild) return message.reply('**يعني مدري انت مجنون ولا ايش في احد يرسل سيرفره لبوت ؟ :thinking: **');
+        if (!message.member.hasPermissions(['ADMINISTRATOR'])){
+        message.delete()
+    return message.reply(`**تم منع نشر الروابط فالسيرفر :x:**`)
+    }
+}
+});
+
+client.on('message', message => {
+    if(message.content.includes('.cf')){ 
+                                            if(!message.channel.guild) return message.reply('**يعني مدري انت مجنون ولا ايش في احد يرسل سيرفره لبوت ؟ :thinking: **');
+        if (!message.member.hasPermissions(['ADMINISTRATOR'])){
+        message.delete()
+    return message.reply(`**تم منع نشر الروابط فالسيرفر :x:**`)
+    }
+}
+});
+
 
 client.on('message' , message => {
     if (message.content === "!invite") {
@@ -259,8 +307,8 @@ client.on('message' , message => {
  .setColor("RANDOM")
  .setThumbnail(client.user.avatarURL)
  .setAuthor(message.author.username, message.author.avatarURL)
- .setTitle('قريبا عودة البوت الى جميع السيرفرات !')
- .setURL('discord.gg')
+ .setTitle('اضغط هنا لدعوة البوت الى سيرفرك')
+ .setURL('https://discord.com/api/oauth2/authorize?client_id=719956043362467870&permissions=8&scope=bot')
   message.channel.sendEmbed(embed);
    }
 });
@@ -274,131 +322,10 @@ client.on('message' , message => {
  .setThumbnail(client.user.avatarURL)
  .setAuthor(message.author.username, message.author.avatarURL)
  .setTitle('اظغط هنا لدخول سيرفر الدعم الفني')
- .setURL('https://discord.gg/ZPzcRfu')
+ .setURL('https://discord.gg/KppSK4Q')
   message.channel.sendEmbed(embed);
    }
 });
-
-
-client.on('message', message => {
-     if (message.content === "!challengefalse") {
-     let embed = new Discord.RichEmbed()
-  .setAuthor(message.author.username)
-               .setFooter(`ArabicoBot`, 'https://images-ext-2.discordapp.net/external/lrVzKt7T8b5JZz-VcYfH6ICQtHA0Bj8_AXkq_JO2ZX8/https/cdn.discordapp.com/attachments/411548285740908551/411550507363074048/6k0g8EYs.jpg')
-  .setColor("#9B59B6")
-	 .addField("اختر تحدي | !challenge | !challenge2 | !challenge3 | !challenge4 | !challenge5 | !challenge6 | !challenge7")
-	 
-	 
-	 
-  message.channel.sendEmbed(embed);
-    }
-});
-
-
-
-client.on('message', message => {
-     if (message.content === "!challengefalse") {
-     let embed = new Discord.RichEmbed()
-  .setAuthor(message.author.username)
-               .setFooter(`ArabicoBot`, 'https://images-ext-2.discordapp.net/external/lrVzKt7T8b5JZz-VcYfH6ICQtHA0Bj8_AXkq_JO2ZX8/https/cdn.discordapp.com/attachments/411548285740908551/411550507363074048/6k0g8EYs.jpg')
-  .setColor("#9B59B6")
-  .addField("روح عند ابوك واسلخه كف او تروح تاكل 5 ليمونات حامضة")
-     
-     
-     
-  message.channel.sendEmbed(embed);
-    }
-});
-
-
-client.on('message', message => {
-     if (message.content === "!challenge2false") {
-     let embed = new Discord.RichEmbed()
-  .setAuthor(message.author.username)
-               .setFooter(`ArabicoBot`, 'https://images-ext-2.discordapp.net/external/lrVzKt7T8b5JZz-VcYfH6ICQtHA0Bj8_AXkq_JO2ZX8/https/cdn.discordapp.com/attachments/411548285740908551/411550507363074048/6k0g8EYs.jpg')
-  .setColor("#9B59B6")
-  .addField("تروح عند ابوك وتقله احبك او تروح عند صديقك وتقله انا اكرهك واضربه كف")
-     
-     
-	 
-  message.channel.sendEmbed(embed);
-    }
-});
-  
-  
-client.on('message', message => {
-     if (message.content === "!challenge3false") {
-     let embed = new Discord.RichEmbed()
-  .setAuthor(message.author.username)
-               .setFooter(`ArabicoBot`, 'https://images-ext-2.discordapp.net/external/lrVzKt7T8b5JZz-VcYfH6ICQtHA0Bj8_AXkq_JO2ZX8/https/cdn.discordapp.com/attachments/411548285740908551/411550507363074048/6k0g8EYs.jpg')
-  .setColor("#9B59B6")
-  .addField("تروح عند اختك وتكذب عليها او تروح عند ابوك تقله بخترقكك عشاني كرهتك")
-     
-	 
-	 
-  message.channel.sendEmbed(embed);
-    }
-});
-
-
-client.on('message', message => {
-     if (message.content === "!challenge4false") {
-     let embed = new Discord.RichEmbed()
-  .setAuthor(message.author.username)
-               .setFooter(`ArabicoBot`, 'https://images-ext-2.discordapp.net/external/lrVzKt7T8b5JZz-VcYfH6ICQtHA0Bj8_AXkq_JO2ZX8/https/cdn.discordapp.com/attachments/411548285740908551/411550507363074048/6k0g8EYs.jpg')
-  .setColor("#9B59B6")
-  .addField("تروح على المطبخ وتقشر بصل او تروح الخزانة حقتك وتحرق بنطلون")
-     
-	 
-	 
-  message.channel.sendEmbed(embed);
-    }
-});
-
-client.on('message', message => {
-     if (message.content === "!challenge5false") {
-     let embed = new Discord.RichEmbed()
-  .setAuthor(message.author.username)
-               .setFooter(`ArabicoBot`, 'https://images-ext-2.discordapp.net/external/lrVzKt7T8b5JZz-VcYfH6ICQtHA0Bj8_AXkq_JO2ZX8/https/cdn.discordapp.com/attachments/411548285740908551/411550507363074048/6k0g8EYs.jpg')
-  .setColor("#9B59B6")
-  .addField("تروح الحمام وتعبي مويا حقته وتعطيه ل اخوك يشربه او تروح عند اخوك وتقله كل زق")
-     
-	 
-	 
-  message.channel.sendEmbed(embed);
-    }
-});
-
-
-client.on('message', message => {
-     if (message.content === "!challenge6false") {
-     let embed = new Discord.RichEmbed()
-  .setAuthor(message.author.username)
-               .setFooter(`ArabicoBot`, 'https://images-ext-2.discordapp.net/external/lrVzKt7T8b5JZz-VcYfH6ICQtHA0Bj8_AXkq_JO2ZX8/https/cdn.discordapp.com/attachments/411548285740908551/411550507363074048/6k0g8EYs.jpg')
-  .setColor("#9B59B6")
-  .addField("تروح تاكل شي ما تحبه وتكرهه او تاكل 10 حلاوة معفنة")
-     
-	 
-	 
-  message.channel.sendEmbed(embed);
-    }
-});
-
-
-client.on('message', message => {
-     if (message.content === "!challenge7false") {
-     let embed = new Discord.RichEmbed()
-  .setAuthor(message.author.username)
-               .setFooter(`ArabicoBot`, 'https://images-ext-2.discordapp.net/external/lrVzKt7T8b5JZz-VcYfH6ICQtHA0Bj8_AXkq_JO2ZX8/https/cdn.discordapp.com/attachments/411548285740908551/411550507363074048/6k0g8EYs.jpg')
-  .setColor("#9B59B6")
-  .addField("تروح تاكل حبة من البطاطا يلي ياكلها خويك او تخدع اخوك لما يجيب بطاطا تاكله كله")
-     
-	 
-	 
-  message.channel.sendEmbed(embed);
-    }
-});
- 
  
 client.on('message', function(message) {
 if(!message.channel.guild) return;
@@ -668,7 +595,7 @@ return message.reply("**:white_check_mark: .. تم فك الميوت عن الش
 
 client.on('message', message => {
 
-       if(message.content === prefix + "hidechat") {
+       if(message.content === prefix + "hide") {
                            if(!message.channel.guild) return message.reply('** This command only for servers**');
 
    if(!message.member.hasPermission('MANAGE_MESSAGES')) return message.reply(' **__ليس لديك صلاحيات__**');
@@ -680,7 +607,7 @@ client.on('message', message => {
               });
                 }
 //viper
-    if(message.content === prefix + "showchat") {
+    if(message.content === prefix + "show") {
                         if(!message.channel.guild) return message.reply('** This command only for servers**');
 
    if(!message.member.hasPermission('MANAGE_MESSAGES')) return message.reply('**__ليس لديك صلاحيات__**');
@@ -699,7 +626,7 @@ client.on('message', message => {
 
 client.on('message', message => {
 
-       if(message.content === prefix + "mutechat") {
+       if(message.content === prefix + "lock") {
                            if(!message.channel.guild) return message.reply('** This command only for servers**');
 
    if(!message.member.hasPermission('MANAGE_MESSAGES')) return message.reply(' **__ليس لديك صلاحيات__**');
@@ -711,7 +638,7 @@ client.on('message', message => {
               });
                 }
 //viper
-    if(message.content === prefix + "unmutechat") {
+    if(message.content === prefix + "unlock") {
                         if(!message.channel.guild) return message.reply('** This command only for servers**');
 
    if(!message.member.hasPermission('MANAGE_MESSAGES')) return message.reply('**__ليس لديك صلاحيات__**');
@@ -909,44 +836,13 @@ const Za7f = [
   var embed = new Discord.RichEmbed()
   .setColor('RANDOM')
    .setThumbnail(message.author.avatarURL) 
- .addField('تم معاقبتك هاهاهاهاها' ,
+ .addField('لقد تم عقابك' ,
   `${Za7f[Math.floor(Math.random() * Za7f.length)]}`)
   message.channel.sendEmbed(embed);
   console.log('[38ab] Send By: ' + message.author.username)
     }
 });
-
-var prefix = "!"
-client.on('message', message => {
-
-  if (message.content.startsWith(prefix + "contact")) {
-  if (!message.channel.guild) return;
-  let args = message.content.split(" ").slice(1).join(' ');
-  client.users.get("414870488691769344").send(
-      "\n" + "" + "● السيرفر :" + "" +
-      "\n" + "" + "» " + message.guild.name + "" +
-      "\n" + "" + " ● المرسل : " + "" +
-      "\n" + "" + "» " + message.author.tag + "" +
-      "\n" + "" + " ● الرسالة : " + "" +
-      "\n" + "" + args + "")
-  }
-  });
-
-
-   client.on('message', message => {
-     if (message.content === "!contact") {
-     let embed = new Discord.RichEmbed()
-  .setAuthor(message.author.username)
-               .setFooter(`ArabicoBot`, 'https://images-ext-2.discordapp.net/external/lrVzKt7T8b5JZz-VcYfH6ICQtHA0Bj8_AXkq_JO2ZX8/https/cdn.discordapp.com/attachments/411548285740908551/411550507363074048/6k0g8EYs.jpg')
-  .setColor("#9B59B6")
-  .addField("تم ارسال رسالة لصاحب البوت العربي")
   
-     
-     
-  message.channel.sendEmbed(embed);
-    }
-});
-
 
 client.on('message', message => {
     if (message.content === "!rooms") {
@@ -1013,22 +909,8 @@ message.react("??")
 }
 });
 
-
-client.on('message' , message => {
-    if (message.content === "!websitefalse") {
-        if(!message.channel.guild) return message.reply('This Command is Only For Servers');
-     const embed = new Discord.RichEmbed()
- .setColor("RANDOM")
- .setThumbnail(client.user.avatarURL)
- .setAuthor(message.author.username, message.author.avatarURL)
- .setTitle('اظغط هنا لدخول موقع البوت العربي')
- .setURL('https://arabicobot.wixsite.com/arabicobot')
-  message.channel.sendEmbed(embed);
-   }
-});
-
 client.on('message', msg => {
-  //Code By : ‡ ♪ ℬℐℓѦℓ✋ ‡#2026
+	
   if(msg.content.startsWith('!suggest')) {
     if(!msg.channel.guild) return msg.reply('** هاذا الامر فقط للسيرفرات**');
     if(!msg.guild.channels.find('name', 'suggestions')) return msg.reply('**الروم غير موجود :x: الرجاء اضافة روم بأسم suggestions**');
@@ -1063,49 +945,6 @@ client.on('message', message => {
       "\n" + "" + args + "")
   }
   });
-
- 
- client.on('message', message => {
-              if(!message.channel.guild) return;
-    if(message.content.startsWith('!bc')) {
-    if(!message.channel.guild) return message.channel.send('**هذا الأمر فقط للسيرفرات**').then(m => m.delete(5000));
-  if(!message.member.hasPermission('ADMINISTRATOR')) return      message.channel.send('**للأسف لا تمتلك صلاحية** `ADMINISTRATOR`' );
-    let args = message.content.split(" ").join(" ").slice(2 + prefix.length);
-    let copy = "ArabicoBot";
-    let request = `Requested By ${message.author.username}`;
-    if (!args) return message.reply('**يجب عليك كتابة كلمة او جملة لإرسال البرودكاست**');message.channel.send(`**هل أنت متأكد من إرسالك البرودكاست؟ \nمحتوى البرودكاست:** \` ${args}\``).then(msg => {
-    msg.react('✅')
-    .then(() => msg.react('❌'))
-    .then(() =>msg.react('✅'))
-
-    let reaction1Filter = (reaction, user) => reaction.emoji.name === '✅' && user.id === message.author.id;
-    let reaction2Filter = (reaction, user) => reaction.emoji.name === '❌' && user.id === message.author.id;
-       let reaction1 = msg.createReactionCollector(reaction1Filter, { time: 12000 });
-    let reaction2 = msg.createReactionCollector(reaction2Filter, { time: 12000 });
-    reaction1.on("collect", r => {
-    message.channel.send(`☑ | تم ارسال البرود كاست الى جميع الاعضاء الموجودين في السيرفر  ${message.guild.members.size}`).then(m => m.delete(5000));
-    message.guild.members.forEach(m => { 
-    var bc = new
-       Discord.RichEmbed()
-       .setColor('RANDOM')
-       .setTitle('Broadcast')
-       .addField('السيرفر', message.guild.name)
-       .addField('المرسل', message.author.username)
-       .addField('الرسالة', args)
-       .setImage("https://images-ext-2.discordapp.net/external/lrVzKt7T8b5JZz-VcYfH6ICQtHA0Bj8_AXkq_JO2ZX8/https/cdn.discordapp.com/attachments/411548285740908551/411550507363074048/6k0g8EYs.jpg")
-       .setThumbnail(message.author.avatarURL)
-       .setFooter(copy, client.user.avatarURL);
-    m.send({ embed: bc })
-    msg.delete();
-    })
-    })
-    reaction2.on("collect", r => {
-    message.channel.send(`**تم الغاء البرودكاست.**`).then(m => m.delete(5000));
-    msg.delete();
-    })
-    })
-    }
-    });
 
 
 // THIS  MUST  BE  THIS  WAY
