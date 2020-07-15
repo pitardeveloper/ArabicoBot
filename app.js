@@ -35,7 +35,7 @@ client.on('message', message => {
 
 // playing
 client.on('ready', () => {
-                                                                                                                                                                                                                                                                              client.user.setGame(`ArabicBot | Type !help For Help.`,'https://www.twitch.tv/kimomixpro');
+                                                                                                                                                                                                                                                                              client.user.setGame(`ArabicBot | !help for help`,'https://www.twitch.tv/kimomixpro');
 });
 
 
