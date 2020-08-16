@@ -11,7 +11,7 @@ const ms = require("ms");
 const { get } = require("snekfetch");
 const YouTube = require("simple-youtube-api");
 const youtube = new YouTube("AIzaSyAXaeBh837k38o_lwSADet8UTO7X21DGsY"); //تعديل اساسي سوي اي بي اي جديد
-client.login(process.env.BOT_TOKEN2);
+client.login(process.env.BOT_TOKENN);
 const yt_api_key = "AIzaSyAXaeBh837k38o_lwSADet8UTO7X21DGsY"; 
 const queue = new Map();
 const Discord = require("discord.js");
