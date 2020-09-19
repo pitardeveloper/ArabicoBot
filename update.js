@@ -1106,7 +1106,7 @@ client.on("messageDelete", message => {
     .setColor("RED")
     .setThumbnail(message.author.avatarURL)
     .setDescription(
-      `**\n**:wastebasket: بنجاح \`\`تـم مسـحـها\`\` **رسـالـة** In ${message.channel}\n\n**الـروم:** \`\`${message.channel.name}\`\` (ID: ${message.channel.id})\n**أيدي الرسـالـة:** ${message.id}\n**مـرسـلهـا :** <@${message.author.id}> (ID: ${message.author.id})\n**الرسـالـة :**\n\`\`\`${message}\`\`\``
+      `**\n**:wastebasket: تـم \`\`مـسـح\`\` **رسـالـة** فـي ${message.channel}\n\n**الـروم:** \`\`${message.channel.name}\`\` (ID: ${message.channel.id})\n**أيدي الرسـالـة:** ${message.id}\n**مـرسـلهـا :** <@${message.author.id}> (ID: ${message.author.id})\n**الرسـالـة :**\n\`\`\`${message}\`\`\``
     )
     .setTimestamp()
     .setFooter(message.guild.name, message.guild.iconURL);
@@ -1137,7 +1137,7 @@ client.on("messageUpdate", (oldMessage, newMessage) => {
     .setThumbnail(oldMessage.author.avatarURL)
     .setColor("BLUE")
     .setDescription(
-      `**\n**:wrench: بنجاح \`\`تـم تـعديـلها\`\` **رسـالـة** In ${oldMessage.channel}\n\n**الـروم:** \`\`${oldMessage.channel.name}\`\` (ID: ${oldMessage.channel.id})\n**أيدي الرسـالـة:** ${oldMessage.id}\n**مـرسـلهـا :** <@${oldMessage.author.id}> (ID: ${oldMessage.author.id})\n\n**الرسـالـة القـديـمة:**\`\`\`${oldMessage}\`\`\`\n**الرسـالـة الجـديـدة:**\`\`\`${newMessage}\`\`\``
+      `**\n**:wrench: تـم \`\`تـعديـل\`\` **رسـالـة** فـي ${oldMessage.channel}\n\n**الـروم:** \`\`${oldMessage.channel.name}\`\` (ID: ${oldMessage.channel.id})\n**أيدي الرسـالـة:** ${oldMessage.id}\n**مـرسـلهـا :** <@${oldMessage.author.id}> (ID: ${oldMessage.author.id})\n\n**الرسـالـة القـديـمة:**\`\`\`${oldMessage}\`\`\`\n**الرسـالـة الجـديـدة:**\`\`\`${newMessage}\`\`\``
     )
     .setTimestamp()
     .setFooter(oldMessage.guild.name, oldMessage.guild.iconURL);
