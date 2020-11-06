@@ -17,7 +17,7 @@ const queue = new Map();
 const Discord = require("discord.js");
 const myid = ["512603544227151872"];
 const pretty = require("pretty-ms");
-const prefix = ["!"];
+const prefix = ["%"];
 const { devs } = require("./config");
 const moment = require("moment");
 
@@ -151,7 +151,7 @@ client.on('message', message => {
 });
 
 client.on('message', message => {
-  if (message.content === "!help") {
+  if (message.content === "%help") {
     message.author.send("" + `  **
 !help general » للأوامـر العـامـة
 !help admin » للأوامـر الأداريـة
@@ -165,7 +165,7 @@ client.on('message', message => {
 
 
 client.on('message', message => {
-  if (message.content === "!help general") {
+  if (message.content === "%help general") {
     message.author.send("" + `  **
     أوامـر عــامـة » :reminder_ribbon: 
     !profile » معلومــات حـسابـك الـشـخـصـي
@@ -185,7 +185,7 @@ client.on('message', message => {
 });
 
 client.on('message', message => {
-  if (message.content === "!help admin") {
+  if (message.content === "%help admin") {
     message.author.send("" + `  **
     أوامـر أداريـة » :reminder_ribbon: 
     !kick » لـطـرد عـضـو
@@ -210,7 +210,7 @@ client.on('message', message => {
 });
 
 client.on('message', message => {
-  if (message.content === "!help bot") {
+  if (message.content === "%help bot") {
     message.author.send("" + `  **
     أوامـر الــبـوت » :reminder_ribbon: 
     !ping » لـمـعـرفـة سـرعـة أتـصـال الـبـوت
@@ -222,7 +222,7 @@ client.on('message', message => {
 });
 
 client.on('message', message => {
-  if (message.content === "!help games") {
+  if (message.content === "%help games") {
     message.author.send("" + `  **
     أوامـر الألـعـاب » :reminder_ribbon: 
     !challenge » لـعـبـة تـحديـات
@@ -238,7 +238,7 @@ client.on('message', message => {
 });
 
 client.on('message', message => {
-  if (message.content === "!help others") {
+  if (message.content === "%help others") {
     message.author.send("" + `  **
     أوامـر اخــرى » :reminder_ribbon: 
     !man » يـرسـل لـك صـورة رجـال (صيانة)
@@ -566,7 +566,7 @@ client.on('message', async message => {
   if (message.author.bot) return;
   if (message.channel.type == 'dm') return;
   let args = message.content.split(' ');
-  if (args[0] == '!hack') {
+  if (args[0] == '%hack') {
     let user = message.mentions.members.first();
     if (!user) return message.channel.send('**Mention A User To Hack. 🙂**');
     let hack = await message.channel.send(`**Hacking <@${user.id}> <:ShyizerPartner4:722067478976397404>**`);
@@ -639,7 +639,7 @@ client.on('message', async message => {
 const challenge = ['اتحداك تاكل ليمونة كاملة حامضة', 'تروح ي بيبسي او كوكا كولا 1 لتر وتشربها ب اقل من دقيقتين لو خسرت لازم تتعاقب عن طريق امر !punish', 'تحذف افضل لعبة عندك فالجوال واذا انت بيسي احذفها', 'اتحداك تشغل اغنية مرة مزعجة انت ما تحبها بصوت عالي', 'اتحداك تطفي الانترنت لمدة ساعة', 'اتحداك تضرب اخوك كف اذا ما عندك اخ اضرب نفسك كف قوي', 'اتحداك تقول لي احبك', 'اتحداك تكسر كاسة او صحن فالبيت', 'اتحداك تكتب امر !punish وتنفذ العقاب', 'اتحداك تطلع من السيرفر 10 دقايق وترجع لو السيرفر سيرفرك اطلع من اي سيرفر 10 دقايق', 'اتحداك تقول لشخص فالشارع ما تعرفه تراك مرة كريه', 'اتحداك تضارب مع خويك اللي معك', 'اتحداك تكتب امر !cat وأي صورة تطلعلك حطها صورة بروفايلك لمدة 20 دقيقة', 'غير اسمك فالدسكورد الى انا بوت لمدة 10 دقايق', 'تاكل اكلة ما تحبها او تسلخ نفسك كف قوي ', 'اتحداك تروح اي سيرفر وتكتب فالشات انا مجنون', 'اتحداك تخلط 2 من انواع المشروبات وتشربه', 'اتحداك تختم لعبة Getting Over It بدون ما تعصب', 'اتحداك تروح اي سيرفر وتمنشن اونر السيرفر 3 مرات وتمسح', 'اتحداك تمنشن اخر شخص كتب فالشات وتقوله انا احبك', '** :octagonal_sign: استخدم النسخة المدفوعة لفتح مزيد من التحديات :white_check_mark:  :octagonal_sign: ** ']
 
 client.on('message', message => {
-  if (message.content === `!challenge`) {
+  if (message.content === `%challenge`) {
     message.channel.sendMessage({
       embed: {
         color: 3547003,
@@ -683,7 +683,7 @@ const cuttweet = [
 ]
 
 client.on('message', message => {
-  if (message.content === `!cut`) {
+  if (message.content === `%cut`) {
     message.channel.sendMessage({
       embed: {
         color: 3547003,
@@ -757,7 +757,7 @@ const Sra7a = [
 ]
 
 client.on('message', message => {
-  if (message.content.startsWith('!saraha')) {
+  if (message.content.startsWith('%saraha')) {
     if (!message.channel.guild) return message.reply('** This command only for servers **');
     var client = new Discord.RichEmbed()
       .setTitle("لعبة صراحة ..")
@@ -922,7 +922,7 @@ const Za7f = [
 
 
 client.on('message', message => {
-  if (message.content.startsWith("!punish")) {
+  if (message.content.startsWith("%punish")) {
     if (!message.channel.guild) return message.reply('** This command only for servers**');
     var embed = new Discord.RichEmbed()
       .setColor('RANDOM')
@@ -939,7 +939,7 @@ client.on('message', async message => {
   if (message.author.bot) return;
   if (!message.content.startsWith(prefix)) return;
   if (message.channel.type == 'dm') return;
-  if (!message.content.startsWith('!slowmode')) return;
+  if (!message.content.startsWith('%slowmode')) return;
   if (!message.member.hasPermission('MANAGE_CHANNELS')) return message.channel.send('لـيـس لـديك صـلاحـيات كـافـية - :x:');
   if (!message.guild.me.hasPermission('MANAGE_CHANNELS')) return message.channel.send('الـبوت لـيـس لـديه صـلاحـيات كـافـية - :x:');
   if (!args[1]) {
