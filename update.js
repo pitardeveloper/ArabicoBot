@@ -24,7 +24,7 @@ const moment = require("moment");
 client.on("ready", () => {
   client.user.setStatus("Idle");
 
-  client.user.setActivity(`Soon Update / !help`, { type: "PLAYING" });
+  client.user.setActivity(`Soon Update / %help`, { type: "PLAYING" });
 });
 
 client.on("message", message => {
